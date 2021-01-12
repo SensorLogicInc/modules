@@ -3,8 +3,10 @@
 This is a guide on how to manually update the firmware on a HeMP2 device 
 using the NXP-MCUBootUtility tool.
 
-This tool can be downloaded from the url:  
-https://github.com/JayHeng/NXP-MCUBootUtility
+## Downloads
+- [NXP-MCUBootUtility Tool](https://github.com/JayHeng/NXP-MCUBootUtility)
+- [HeMP2 Health Firmware](https://modules-release.s3-us-west-2.amazonaws.com/firmware/hep2_usb_vcom_pb_dsp-epam0P1.s19)
+- [HeMP2 MATLAB Firmware](https://modules-release.s3-us-west-2.amazonaws.com/firmware/hep2_usb_vcom_xep_matlab_server.s19)
 
 ## Step 1: Set the boot pins
 
@@ -17,7 +19,7 @@ right.
 
 |Update Firmware Settings|Normal Settings|
 |-|-|
-|![](images/fw_update_boot_pins.png)|![](images/normal_boot_pins.png)|
+|![](images/firmware_update/hemp2_fw_update_boot_pins.jpg)|![](images/firmware_update/hemp2_normal_boot_pins.jpg)|
 
 Once the boot pins are set, plug in the USB cable to power the HeMP2. When
 the boot pins are set in the firmware update mode, the RGB LED will look like
@@ -32,13 +34,13 @@ ID values in the 'Port Setup' area.
 When the program starts, there will also be a text console window open. It will
 not have any content initially.
 
-![](images/boot_util_1.png)
+![](images/firmware_update/boot_util_1.png)
 
 Next, click the 'Connect to ROM' button. This may take a few seconds, but there
 will a flurry of activity in the text window, and eventually, the main window
 will change.
 
-![](images/boot_util_2.png)
+![](images/firmware_update/boot_util_2.png)
 
 ## Step 3: Update the Firmware
 
@@ -46,17 +48,17 @@ In the green box, click the 'Browse' button and select the `.s19` firmware file
 you wish to update. Since the firmware files are `.s19` files, choose the option
 for 'Motorola S-Records (.srec/.s19)'.
 
-![](images/boot_util_3.png)
+![](images/firmware_update/boot_util_3.png)
 
 Next, click the 'All-In-One Action' button just above. The main window will then
 change a few times.
 
-![](images/boot_util_4.png)
+![](images/firmware_update/boot_util_4.png)
 
 After a few seconds, the window will change again and update as the firmware is
 flashed on to the HeMP2 device.
 
-![](images/boot_util_5.png)
+![](images/firmware_update/boot_util_5.png)
 
 Depending on the size of the firmware file, it can take a while to finish. Once
 the update is done, the program will play a sound. The progress bar will also be
