@@ -1,5 +1,5 @@
 # SensorLogic NXP Xethru-X4 Ultra-wideband Radar Modules
-The centerpiece is the 2-pc **He**alth **M**odule **P**CB, which is comprised of a baseboard and an elliptical patch antenna module (EPAM). The baseboard foundation is an i.MX RT1060 crossover MCU from NXP with a host of environmental sensors recording temperature, humidity, lux, and noise pressure. The hallmark sensor is the X4 UWB sensor that can be used for myriad applications including occupancy, proximity, and respiration, out to 10 meters (RCS depending).
+The centerpiece is the 2-pc **He**alth **M**odule **P**CB, which is comprised of a baseboard and an elliptical patch antenna module (EPAM). The baseboard foundation is an i.MX RT1060 crossover MCU from NXP with a host of environmental sensors recording temperature, humidity, lux, and noise pressure. The hallmark sensor is the X4 UWB radar that can be used for myriad applications including occupancy, proximity, and respiration, out to 10 meters (RCS depending).
 
 ## HeMP Health Firmware and App
 The _Health Firmware_ runs our proprietary algorithms to identify the presence of, and distance to, a human target. If conditions are right, the respiration of the human is calculated within +/-1 RPM. The current room temperature, humidity, and illuminance levels are also calculated and stored. The data is transmitted via USB or Wi-Fi, depending on the application and is displayed on a basic C# Windows Forms app, the [HeMP Buddy](https://github.com/SensorLogicInc/modules/blob/module-initial-release/docs/health_app.md), ultimately displaying the subject's breathing pattern.
@@ -24,6 +24,8 @@ The _MATLAB Firmware and Connector_ allows the user to use an efficient, high-le
 │   ├── hemp2_usb_vcom.options          # Health Firmware Protocol Buffer Options
 │   ├── hemp2_usb_vcom.proto            # Health Firmware Protocol Buffer .proto file
 │   └── readme.md                       # Health Firmware Protocol Buffer ReadMe
+├── usb_driver
+│   └── inf/                            # Contains the USB VCOM device driver for Windows 
 ├── .gitignore                          # Git Ignore
 └── readme.md                           # This File
 ```

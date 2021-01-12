@@ -7,10 +7,10 @@ The following guide provides information about downloading and running the HeMP2
 2. Extract the files from the `HeMP2_Buddy` Zip Folder.
 3. Move the `HeMP2_Buddy` Folder, if desired. This folder location will be know as [SLI-Modules].
 #### HeMP  Buddy Files
-    |-- [SLI-Modules]\Hemp2_Buddy
-        |-- HeMP2_Buddy.exe
-        |-- LibUsbDotNet.dll
-        |-- protobuf-net.dll
+    └── [SLI-Modules]\Hemp2_Buddy
+        ├── HeMP2_Buddy.exe
+        ├── LibUsbDotNet.dll
+        └── protobuf-net.dll
 
 ### Power Up the HeMP and Verify the USB COM Port
 1. Connect a Micro-USB Cable to your PC and to the HeMP2 USB Port
