@@ -8,6 +8,9 @@ _In the current version, streaming radar data is not supported. The `vcom_xep_ra
 supports a design where the user will request (poll) for data, and the particular
 server running will then produce a response message._
 
+## Firmware Update
+The HeMP2 Firmware can be updated using the [Insecure Firmware Update Guide](https://github.com/SensorLogicInc/modules/blob/module-initial-release/docs/insecure_fw_update.md).
+
 ## vcom_xep_radar_connector
 The `vcom_xep_radar_connector` works on the HeMP hardware over USB; this NXP MIMXRT1062 micro-controller platform exposes USB as a virtual COM port. 
 

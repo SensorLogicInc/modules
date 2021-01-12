@@ -1,5 +1,5 @@
 # HeMP - Health App User Guide
-The following guide provides information about downloading and running the HeMP2 Health App. To update to the HeMP2 Health Firmware, please see the [Updating the HeMP Firmware Guide]().
+The following guide provides information about downloading and running the HeMP2 Health App. To update to the HeMP2 Health Firmware, please see the [Updating the HeMP Firmware Guide](https://github.com/SensorLogicInc/modules/blob/module-initial-release/docs/insecure_fw_update.md).
 
 ## HeMP Health App - Download and Connect
 ### Download the HeMP Health App
