@@ -1,0 +1,9 @@
+msg_payload_vector_t.vec max_count:1536
+msg_payload_str_t.str max_size:256
+msg_payload_data_copy_t.data fixed_length:true max_size:256
+msg_payload_wifi_record_t.bssid fixed_length:true max_size:6
+msg_payload_wifi_record_t.ssid max_size:32
+msg_payload_platform_status_t.init_fail fixed_length:true max_size:11
+msg_payload_health_t.debug max_count:8
+msg_payload_log_data_t.data fixed_length:true max_size:2048
+
