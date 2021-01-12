@@ -1,8 +1,8 @@
 # SensorLogic NXP-Based X4 Ultra-Wide Band Radar Modules
 
-## HeMP2 Health Firmware and App
+## HeMP Health Firmware and App
 
-## HeMP2 MATLAB Firmware and Connector
+## HeMP MATLAB Firmware and Connector
 
 ## Folder Structure
     |-- docs/
