@@ -9,7 +9,7 @@ supports a design where the user will request (poll) for data, and the particula
 server running will then produce a response message._
 
 ## vcom_xep_radar_connector
-The `vcom_xep_radar_connector` works on the HeMP2 hardware over USB; this NXP MIMXRT1062 micro-controller platform exposes USB as a virtual COM port. 
+The `vcom_xep_radar_connector` works on the HeMP hardware over USB; this NXP MIMXRT1062 micro-controller platform exposes USB as a virtual COM port. 
 
 On Windows, the device will show up in the 'Device Manager' under the 
 'Ports (COM & LPT)' category, with the label 'Virtual Com Port'. _The driver 

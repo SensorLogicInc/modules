@@ -1,24 +1,24 @@
-# HeMP2 - Health App User Guide
-The following guide provides information about downloading and running the HeMP2 Health App. To update to the HeMP2 Health Firmware, please see the [Updating the HeMP2 Firmware Guide]().
+# HeMP - Health App User Guide
+The following guide provides information about downloading and running the HeMP2 Health App. To update to the HeMP2 Health Firmware, please see the [Updating the HeMP Firmware Guide]().
 
-## HeMP2 Health App - Download and Connect
-### Download the HeMP2 Health App
-1. Download the [HeMP2 Health App](https://modules-release.s3-us-west-2.amazonaws.com/health_windows_app/HeMP2_Buddy.zip)
+## HeMP Health App - Download and Connect
+### Download the HeMP Health App
+1. Download the [HeMP Health App](https://modules-release.s3-us-west-2.amazonaws.com/health_windows_app/HeMP2_Buddy.zip)
 2. Extract the files from the `HeMP2_Buddy` Zip Folder.
 3. Move the `HeMP2_Buddy` Folder, if desired. This folder location will be know as [SLI-Modules].
-#### HeMP 2 Buddy Files
+#### HeMP  Buddy Files
     |-- [SLI-Modules]\Hemp2_Buddy
         |-- HeMP2_Buddy.exe
         |-- LibUsbDotNet.dll
         |-- protobuf-net.dll
 
-### Power Up the HeMP2 and Verify the USB COM Port
+### Power Up the HeMP and Verify the USB COM Port
 1. Connect a Micro-USB Cable to your PC and to the HeMP2 USB Port
 2. Once powered, with the Red LED will blink at a steady 1 Hz rate, open the `Device Manager` by searching Windows
 3. Under the `Ports (COM & LPT)`, verify there is a new USB Device
     - For example `USB Serial Device (COM8`)
 
-### Launch the HeMP2 Health App and Connect the HeMP2
+### Launch the HeMP Health App and Connect the HeMP2
 1. Launch the HeMP2 Health App by running
     - `[SLI-Modules]\Hemp2_Buddy\HeMP2_Buddy.exe`
     - Windows will most likely launch a `Protect Your PC` Window, if so
@@ -27,7 +27,7 @@ The following guide provides information about downloading and running the HeMP2
 2. Click the `Connect Button` in the bottom left. The device will be connected when the `Connect` Button changes to `Disconnect`
 3. Once connected, click `One Shot` in the bottom right. If this is successful, the Frame Counter will update to `1`.
 
-## HeMP2 Health App - Usage
+## HeMP Health App - Usage
 ### The One Shot
 The `Oneshot` button is really only useful for testing. The health monitoring software requires a number of radar signals in order to compute presence and respiration.
 
