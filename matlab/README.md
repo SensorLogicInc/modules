@@ -2,7 +2,7 @@
 
 The XEP Radar Connector is an interface which allows Matlab to interact with the
 X4 UWB radar remotely. From the Matlab perspective, outside of the initial setup, the functionality of
-the connectors should act identical compared the SensorLogic Linux XEP MATLAB Connector.
+this connector should act identical compared to the SensorLogic Linux XEP MATLAB Connector.
 
 _In the current version, streaming radar data is not supported. The `vcom_xep_radar_connector` connector
 supports a design where the user will request (poll) for data, and the particular
