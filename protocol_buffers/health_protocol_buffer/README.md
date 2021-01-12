@@ -1,4 +1,4 @@
-# Health App - Protocol Buffer
+# Health Firmware - Protocol Buffer
 The defined protocol buffers specification includes a number of message types which are only used for testing and/or development purposes. This section will show some examples of what the binary data looks like for the Start/Stop commands, and the health message.
 
 In the binary data representations below, the first four bytes indicate the length of the message. 
