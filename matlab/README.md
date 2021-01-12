@@ -1,22 +1,15 @@
 # XEP Matlab Connector Notes
 
 The XEP Radar Connector is an interface which allows Matlab to interact with the
-X4 UWB radar remotely.
+X4 UWB radar remotely. From the Matlab perspective, outside of the initial setup, the functionality of
+the connectors should act identical compared the SensorLogic Linux XEP MATLAB Connector.
 
-- **vcom_xep_radar_connector**  
-  This works on the HeMP2 hardware over USB; this NXP MIMXRT1062 micro-controller
-  platform exposes USB as a virtual COM port. 
-
-From the Matlab perspective, outside of the initial setup, the functionality of
-the connectors should act identical between the two versions.
-
-_In the current version, streaming radar data is not supported. Both connectors
-support a design where the user will request (poll) for data, and the particular
+_In the current version, streaming radar data is not supported. The `vcom_xep_radar_connector` connector
+supports a design where the user will request (poll) for data, and the particular
 server running will then produce a response message._
 
 ## vcom_xep_radar_connector
-
-This version treats the USB interface as a virtual COM port.
+The `vcom_xep_radar_connector` works on the HeMP2 hardware over USB; this NXP MIMXRT1062 micro-controller platform exposes USB as a virtual COM port. 
 
 On Windows, the device will show up in the 'Device Manager' under the 
 'Ports (COM & LPT)' category, with the label 'Virtual Com Port'. _The driver 
