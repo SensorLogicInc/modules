@@ -9,7 +9,7 @@ supports a design where the user will request (poll) for data, and the particula
 server running will then produce a response message._
 
 ## Firmware Update
-The SLMX4 Firmware can be updated using the [Insecure Firmware Update Guide](https://github.com/SensorLogicInc/modules/blob/module-initial-release/docs/insecure_fw_update.md).
+The SLMX4 Firmware can be updated using the [Insecure Firmware Update Guide](firmware/insecure_fw_update.md).
 
 ## vcom_xep_radar_connector
 The `vcom_xep_radar_connector` works on the SLMX4 hardware over USB; this NXP MIMXRT1062 micro-controller platform exposes USB as a virtual COM port. 
