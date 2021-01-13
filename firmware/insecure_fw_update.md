@@ -3,9 +3,7 @@
 This is a guide on how to manually update the firmware on a SLMX4-Base using the NXP-MCUBootUtility tool.
 
 ## Downloads
-- [NXP-MCUBootUtility Tool](https://github.com/JayHeng/NXP-MCUBootUtility)
-- [SLMX4-Base Health Firmware](https://modules-release.s3-us-west-2.amazonaws.com/firmware/slmx4_base_usb_vcom_pb_dsp-epam0P1.s19)
-- [SLMX4-Base MATLAB Firmware](https://modules-release.s3-us-west-2.amazonaws.com/firmware/slmx4_base_usb_vcom_xep_matlab_server.s19)
+- [NXP-MCUBootUtility Tool](https://github.com/JayHeng/NXP-MCUBootUtility/releases)
 
 ## Step 1: Set the boot pins
 
