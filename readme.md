@@ -9,7 +9,7 @@ The _MATLAB Firmware and Connector_ allows the user to use an efficient, high-le
 
 ## Folder Structure
 ```
-├── docs
+├── firmware
 │   ├── health_app.md                   # Documentation about the SLMX4 Health App
 │   ├── images/                         # Contains the images used in the markdown documents
 │   ├── insecure_fw_update.md           # Documentation about updating the SLMX4 Firmware
