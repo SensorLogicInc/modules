@@ -35,7 +35,6 @@ The _[MATLAB Firmware and Connector](matlab/readme.md)_ allows the user to use a
 │   ├── slmx4_usb_vcom.options          # Health Firmware Protocol Buffer .options file
 │   └── slmx4_usb_vcom.proto            # Health Firmware Protocol Buffer .proto file
 ├── usb_driver
-│   ├── README.md                       # USB Driver ReadMe
 │   └── inf/                            # Contains the USB VCOM device driver for Windows 
 
 ```
