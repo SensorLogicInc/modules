@@ -7,7 +7,7 @@ The following guide provides information about downloading and running the SLMX4
 2. Extract the files from the `slmx4_health_ui_usb` Zip Folder.
 3. Move the `slmx4_health_ui_usb` Folder, if desired. This folder location will be know as [SLI-Modules].
 #### SLMX4  Buddy Files
-    └── [SLI-Modules]\slmx4_health_ui_usb
+    └── [SLI-Modules]\slmx4_health_ui_usb\
         ├── slmx4_health_ui_usb.exe
         ├── LibUsbDotNet.dll
         └── protobuf-net.dll

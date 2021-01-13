@@ -1,16 +1,15 @@
 # Insecure Firmware Update Guide
 
-This is a guide on how to manually update the firmware on a HeMP2 device 
-using the NXP-MCUBootUtility tool.
+This is a guide on how to manually update the firmware on a SLMX4-Base using the NXP-MCUBootUtility tool.
 
 ## Downloads
 - [NXP-MCUBootUtility Tool](https://github.com/JayHeng/NXP-MCUBootUtility)
-- [HeMP2 Health Firmware](https://modules-release.s3-us-west-2.amazonaws.com/firmware/hep2_usb_vcom_pb_dsp-epam0P1.s19)
-- [HeMP2 MATLAB Firmware](https://modules-release.s3-us-west-2.amazonaws.com/firmware/hep2_usb_vcom_xep_matlab_server.s19)
+- [SLMX4-Base Health Firmware](https://modules-release.s3-us-west-2.amazonaws.com/firmware/slmx4_base_usb_vcom_pb_dsp-epam0P1.s19)
+- [SLMX4-Base MATLAB Firmware](https://modules-release.s3-us-west-2.amazonaws.com/firmware/slmx4_base_usb_vcom_xep_matlab_server.s19)
 
 ## Step 1: Set the boot pins
 
-Before we can use the tool, we need to set the boot pins on the HeMP2 itself.
+Before we can use the tool, we need to set the boot pins on the SLMX4-Base itself.
 When using the NXP-MCUBootUtility, set the SW4 pins to match the image on the
 left.
 
@@ -19,9 +18,9 @@ right.
 
 |Update Firmware Settings|Normal Settings|
 |-|-|
-|![](images/firmware_update/hemp2_fw_update_boot_pins.jpg)|![](images/firmware_update/hemp2_normal_boot_pins.jpg)|
+|![](images/firmware_update/slmx4_base_fw_update_boot_pins.jpg)|![](images/firmware_update/slmx4_base_normal_boot_pins.jpg)|
 
-Once the boot pins are set, plug in the USB cable to power the HeMP2. When
+Once the boot pins are set, plug in the USB cable to power the SLMX4-Base. When
 the boot pins are set in the firmware update mode, the RGB LED will look like
 a feint violet color.
  
@@ -56,7 +55,7 @@ change a few times.
 ![](images/firmware_update/boot_util_4.png)
 
 After a few seconds, the window will change again and update as the firmware is
-flashed on to the HeMP2 device.
+flashed on to the SLMX4-Base.
 
 ![](images/firmware_update/boot_util_5.png)
 
@@ -66,8 +65,8 @@ completely full.
 
 ## Step 4: Reset the Boot Pins
 
-Close the program and then unplug the USB cable from the HeMP2.
+Close the program and then unplug the USB cable from the SLMX4-Base.
 
 Next, reset the boot pins for normal operation, then plug the USB in again. The
-HeMP2 should then boot normally and execute whatever firmware which was 
+SLMX4-Base should then boot normally and execute whatever firmware which was 
 updated.
