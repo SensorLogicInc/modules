@@ -3,9 +3,9 @@ The following guide provides information about downloading and running the SLM-X
 
 ## SLM-X4 Health App - Download and Connect
 ### Download the SLM-X4 Health App
-1. Download the [SLM-X4 Health App](https://modules-release.s3-us-west-2.amazonaws.com/health_windows_app/SLM-X4_Buddy.zip)
-2. Extract the files from the `SLM-X4_Buddy` Zip Folder.
-3. Move the `SLM-X4_Buddy` Folder, if desired. This folder location will be know as [SLI-Modules].
+1. Download the [SLM-X4 Health App](https://modules-release.s3-us-west-2.amazonaws.com/health_windows_app/slmx4_health_ui_usb.zip)
+2. Extract the files from the `slmx4_health_ui_usb` Zip Folder.
+3. Move the `slmx4_health_ui_usb` Folder, if desired. This folder location will be know as [SLI-Modules].
 #### SLM-X4  Buddy Files
     └── [SLI-Modules]\slmx4_health_ui_usb
         ├── slmx4_health_ui_usb.exe
