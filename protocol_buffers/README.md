@@ -8,7 +8,7 @@ communications.
 
 ## Generating Protocol Buffers in C
 On the SLMX4, the firmware is written in C. The tool to generate the `.c` and `.h`
-files from the `.proto` and .option file is [nanopb](https://jpa.kapsi.fi/nanopb/).
+files from the `.proto` and `.option` file is [nanopb](https://jpa.kapsi.fi/nanopb/).
 
 ```
 # ./protoc -oslmx4_usb_vcom.pb slmx4_usb_vcom.proto
