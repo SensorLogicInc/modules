@@ -37,6 +37,6 @@ This [link](slmx4_health.md) has more info on how a subset of commands are
 encoded.
 
 The [`.proto`](slmx4_usb_vcom.proto) file is used to generate the language-specific
-code. In C, we also use the [`.options`](slmx4_usb_vcom.option) file which is needed
+code. In C, we also use the [`.options`](slmx4_usb_vcom.options) file which is needed
 to set the array sizes for various fixed length arrays; this may not be needed in
 other languages, but simplifies things in C.
