@@ -18,7 +18,9 @@ On Windows, the device will show up in the 'Device Manager' under the
 'Ports (COM & LPT)' category, with the label 'Virtual Com Port'. _The driver 
 should automatically install and have an manufacturer id of 'NXP'._
 
-![](images/virtual_com.png)
+<p align="center">
+  <img src="images/virtual_com.png" />
+</p>
 
 **Minimal example on capturing a single radar frame:**
 ```
@@ -28,8 +30,9 @@ r.Open('X4');
 plot(r.GetFrameRawDouble);
 r.Close();
 ```
-
-![](images/basic_capture.png)
+<p align="center">
+  <img src="images/basic_capture.png" />
+</p>
 
 ## Variables
 
