@@ -8,7 +8,7 @@ communications.
 
 ## Generating Protocol Buffers in C
 On the SLMX4, the firmware is written in C. The tool to generate the `.c` and `.h`
-files from the `.proto` and `.option` file is [nanopb](https://jpa.kapsi.fi/nanopb/).
+files from the `.proto` and `.options` file is [nanopb](https://jpa.kapsi.fi/nanopb/).
 
 ```
 # ./protoc -oslmx4_usb_vcom.pb slmx4_usb_vcom.proto
@@ -37,6 +37,6 @@ This [link](slmx4_health.md) has more info on how a subset of commands are
 encoded.
 
 The [`.proto`](slmx4_usb_vcom.proto) file is used to generate the language-specific
-code. In C, we also use the [`.option`](slmx4_usb_vcom.option) file which is needed
+code. In C, we also use the [`.options`](slmx4_usb_vcom.option) file which is needed
 to set the array sizes for various fixed length arrays; this may not be needed in
 other languages, but simplifies things in C.
