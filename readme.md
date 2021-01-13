@@ -25,19 +25,17 @@ The _[MATLAB Firmware and Connector](matlab/readme.md)_ allows the user to use a
 ├── firmware
 │   ├── health_app.md                   # Documentation about the SLMX4 Health App
 │   ├── insecure_fw_update.md           # Documentation about updating the SLMX4 Firmware
-│   └── readme.md
 ├── images                              # Contains the images used in the markdown files
 ├── matlab
-│   ├── readme.md                       # ReadMe describing how to use the VCOM XEP Radar Connector
 │   ├── unit_test.m                     # MATLAB Script to verify the communication with the radar
 │   ├── vcom_test.m                     # MATLAB Script to verify the ability to receive radar data
 │   └── vcom_xep_radar_connector.m      # MATLAB Class to connect the Module to MATLAB
 ├── protocol_buffers
-│   ├── slmx4_usb_vcom.options          # Health Firmware Protocol Buffer Options
-│   ├── slmx4_usb_vcom.proto            # Health Firmware Protocol Buffer .proto file
-│   └── readme.md                       # Health Firmware Protocol Buffer ReadMe
+│   ├── slmx4_health.md                 # Health Firmware Protocol Buffer ReadMe
+│   ├── slmx4_usb_vcom.options          # Health Firmware Protocol Buffer .options file
+│   └── slmx4_usb_vcom.proto            # Health Firmware Protocol Buffer .proto file
 ├── usb_driver
+│   ├── README.md                       # USB Driver ReadMe
 │   └── inf/                            # Contains the USB VCOM device driver for Windows 
-├── .gitignore                          # Git Ignore
-└── readme.md                           # This File
+
 ```
