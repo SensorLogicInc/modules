@@ -31,31 +31,40 @@ ID values in the 'Port Setup' area.
 When the program starts, there will also be a text console window open. It will
 not have any content initially.
 
-![](images/firmware_update/boot_util_1.png)
+<p align="center">
+  <img src="images/firmware_update/boot_util_1.png" />
+</p>
 
 Next, click the 'Connect to ROM' button. This may take a few seconds, but there
 will a flurry of activity in the text window, and eventually, the main window
 will change.
 
-![](images/firmware_update/boot_util_2.png)
+<p align="center">
+  <img src="images/firmware_update/boot_util_2.png" />
+</p>
 
 ## Step 3: Update the Firmware
 
 In the green box, click the 'Browse' button and select the `.s19` firmware file
 you wish to update. Since the firmware files are `.s19` files, choose the option
 for 'Motorola S-Records (.srec/.s19)'.
-
-![](images/firmware_update/boot_util_3.png)
+<p align="center">
+  <img src="images/firmware_update/boot_util_3.png" />
+</p>
 
 Next, click the 'All-In-One Action' button just above. The main window will then
 change a few times.
 
-![](images/firmware_update/boot_util_4.png)
+<p align="center">
+  <img src="images/firmware_update/boot_util_4.png" />
+</p>
 
 After a few seconds, the window will change again and update as the firmware is
 flashed on to the SLMX4-Base.
 
-![](images/firmware_update/boot_util_5.png)
+<p align="center">
+  <img src="images/firmware_update/boot_util_5.png" />
+</p>
 
 Depending on the size of the firmware file, it can take a while to finish. Once
 the update is done, the program will play a sound. The progress bar will also be

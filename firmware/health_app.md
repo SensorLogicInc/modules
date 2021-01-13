@@ -1,5 +1,5 @@
 # SLMX4 - Health App User Guide
-The following guide provides information about downloading and running the SLMX4 Health App. To update to the SLMX4 Health Firmware, please see the [Updating the SLMX4 Firmware Guide](https://github.com/SensorLogicInc/modules/blob/module-initial-release/docs/insecure_fw_update.md).
+The following guide provides information about downloading and running the SLMX4 Health App. To update to the SLMX4 Health Firmware, please see the [Updating the SLMX4 Firmware Guide](insecure_fw_update.md).
 
 ## SLMX4 Health App - Download and Connect
 ### Download the SLMX4 Health App
@@ -36,11 +36,17 @@ The Health Firmware will begin running when the `Start` Button is clicked. In ad
 
 #### Presence Detected
 In this example, the device was placed on a desk with the antennas facing the user. Once started, after a few seconds, the presence is detected.
-![](images/health_app/presence.png)
+<p align="center">
+  <img src="images/health_app/presence.png" />
+</p>
 
 #### Respiration
 Initially, the plot area will be empty. After a few seconds, the respiration waveform will begin to display with the newest data at the right and the oldest data being cycled out the left. The figure below shows the respiration waveform after a while. There is also a Cyan colored indication which activates in the app; there is no corresponding indication on the device itself.
-![](images/health_app/respiration.png)
+<p align="center">
+  <img src="images/health_app/respiration.png" />
+</p>
 
 If there is fast movement for more than 4 seconds, the respiration waveform will reset. The respiration will not be calculated again until the buffer completely fills up. The figure below shows a situation where there had been a reset and the buffer is nearly full again.  
-![](images/health_app/fast_movement_reset.png)
+<p align="center">
+  <img src="images/health_app/fast_movement_reset.png" />
+</p>
