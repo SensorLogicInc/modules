@@ -19,7 +19,7 @@ On Windows, the device will show up in the 'Device Manager' under the
 should automatically install and have an manufacturer id of 'NXP'._
 
 <p align="center">
-  <img src="images/virtual_com.png" />
+  <img src="../images/matlab/virtual_com.png" />
 </p>
 
 **Minimal example on capturing a single radar frame:**
@@ -31,7 +31,7 @@ plot(r.GetFrameRawDouble);
 r.Close();
 ```
 <p align="center">
-  <img src="images/basic_capture.png" />
+  <img src="../images/matlab/basic_capture.png" />
 </p>
 
 ## Variables
