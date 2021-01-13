@@ -17,7 +17,7 @@ The _[MATLAB Firmware and Connector](matlab/readme.md)_ allows the user to use a
 │   ├── health_app.md                   # Documentation about the SLMX4 Health App
 │   ├── insecure_fw_update.md           # Documentation about updating the SLMX4 Firmware
 │   └── readme.md
-├── images/                         # Contains the images used in the markdown documents
+├── images/                             # Contains the images used in the markdown documents
 ├── matlab
 │   ├── readme.md                       # ReadMe describing how to use the VCOM XEP Radar Connector
 │   ├── unit_test.m                     # MATLAB Script to verify the communication with the radar
