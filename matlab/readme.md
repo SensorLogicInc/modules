@@ -47,21 +47,23 @@ unique to the XEP driver.
 | DACStep          | dac_step          | step size of DAC sweep | step size exponent, 2^n, n = (0,1,2,or 3) |
 | PPS              | pps               | number of pulses integrated per DAC step ||
 | Iterations       | iterations        | number of sweep iterations to perform ||
-| PRF              | prf_div           | pulse repetition frequency in Hertz | fex4 PRF set is same as prf_div |
+| PRF              | prf_div           | pulse repetition frequency in Hertz | * `fex4`'s PRF set is same as prf_div |
 |                  | prf               | pulse repetition frequency in Hertz ||
 | SamplingRate     | fs                | sampling rate in Hertz (23.328 GHz) ||
 | SamplersPerFrame | num_samples       | number of samples per frame ||
 |                  | frame_length      | frame length in steps of 96 sampling bins ||
-| RxWait           | rx_wait           | set delay for frame_offset ||
-|                  | tx_region         | set center frequency, Tx3 = 7.29 GHz, Tx4 = 8.748 GHz||
-|                  | tx_power          | set tx power (0, 1, or 2) ||
+| RxWait           | rx_wait           | sets delay for frame_offset ||
+|                  | tx_region         | radar center frequency, Tx3 = 7.29 GHz, Tx4 = 8.748 GHz||
+|                  | tx_power          | tx power level (0, 1, or 2) ||
 | DownConvert      | ddc_en            | digital down conversion enable for IQ data||
 |                  | frame_offset      | frame offset position in meters according to rx_wait||
-|                  | frame_start       | set frame start position in meters ||
-|                  | frame_end         | set frame end position in meters ||
+|                  | frame_start       | frame start position in meters ||
+|                  | frame_end         | frame end position in meters ||
 |                  | unambiguous_range | unambiguous range in meters based on PRF ||
 |                  | ur                | unambiguous range in meters based on PRF | same as unambiguous_range |
 |                  | sweep_time        | calculated time need to a collect radar frame | varies based on sweep settings and PRF |
+
+* `fex4` is legacy x4 driver not in current use
 
 ## Provides Scripts
 
