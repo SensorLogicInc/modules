@@ -1,0 +1,347 @@
+/*
+Protocol Buffer definitions for SLM-X4 *usb_vcom_pb_x4* based projects
+
+Written by Justin Hadella
+(C) 2019 Flat Earth Inc.
+
+VERSION "1.11.0"
+*/
+syntax = "proto3";
+
+// -----------------------------------------------------------------------------
+// OPCODES
+// -----------------------------------------------------------------------------
+
+/*
+All protobuf messages begin with the OPCODE which indicates the context of the
+command's, or response's, payload (if any) 
+*/
+enum OPCODE {
+  ACK          = 0; /* TX - opcode sent to acknowledge command received       */
+  ERR          = 1; /* TX - opcode sent when an error occurs                  */
+  ONE_SHOT     = 2; /* RX - opcode indicate do a one-shot radar capture       */
+                    /* TX - opcode sent with radar data                       */
+  START        = 3; /* RX - opcode indicates to start auto radar captures     */
+  STOP         = 4; /* RX - opcode indicates to stop auto radar captures      */
+  SET_X4_REG   = 5; /* RX - opcode for user change x4 integer register        */
+                    /* TX - opcode payload if error occurred on set command   */
+  GET_X4_REG   = 6; /* RX - opcode to request x4 integer register value       */
+                    /* TX - opcode sent to indicate x4 integer reg value      */
+  GET_HUMID    = 7;
+  GET_TEMP     = 8;
+  GET_LUX      = 9;
+  SET_RGB_LED  = 10;
+  START_LOG    = 11;
+  STOP_LOG     = 12;
+  STATUS_MSG   = 13;
+  DATA_COPY    = 14;
+  DATA_WRITE   = 15;
+  VERSION      = 16;
+  HEALTH_MSG   = 17;
+  SET_HSV_LED  = 18;
+  SET_DATETIME = 19;
+  PLAY_TONE    = 20;
+  TEST_SDRAM   = 21; /* RX - opcode indicates run sdram stress test           */
+  SET_X4F_REG  = 22; /* RX - opcode to request x4 float register value        */
+
+  GET_X4F_REG  = 23; /* TX - opcode sent to indicate x4 float reg value       */
+
+  GET_SND_LVL  = 24;
+  WIFI_SCAN    = 25;
+  WIFI_RECORD  = 26;
+  GET_PLATSTAT = 27; /* TX - opcode send to indicate platform init status     */
+                     /* RX - opcode send to request platform init status      */
+  SERIAL_CMD   = 28; /* RX - opcode for serial string command                 */
+  LOG_DATA     = 29;
+  SET_LUX_GAIN = 30;
+  START_EXT_LOG = 31;
+  STOP_EXT_LOG = 32;
+}
+
+// -----------------------------------------------------------------------------
+// Enumerations
+// -----------------------------------------------------------------------------
+
+/*
+The adjustable (integer) X4 settings
+*/
+enum X4_REG {
+  DDC_EN      = 0;  /* R/W */
+  DAC_MIN     = 1;  /* R/W */
+  DAC_MAX     = 2;  /* R/W */
+  DAC_STEP    = 3;  /* R/W */
+  PPS         = 4;  /* R/W */
+  ITERATIONS  = 5;  /* R/W */
+  RX_WAIT     = 6;  /* R/W */
+  PRF_DIV     = 7;  /* R/W */
+  TX_REGION   = 8;  /* R/W */
+  TX_POWER    = 9;  /* R/W */
+  NUM_SAMPLES = 10; /* R   */
+}
+
+/*
+The adjustable (float) X4 settings
+*/
+enum X4F_REG {
+  FRAME_START  = 0; /* R/W */
+  FRAME_END    = 1; /* R/W */
+  FRAME_OFFSET = 2; /* R/W */
+  FPS          = 3; /* R   */
+  SWEEP_TIME   = 4; /* R   */
+  PRF          = 5; /* R   */
+  FS           = 6; /* R   */
+  UR           = 7; /* R   */
+};
+
+/*
+Enumeration indicates movement type
+
+This can be a sensible combination of multiple values since 1-bit encoding is
+used herein
+*/
+enum MOVEMENT_TYPE {
+  MOVEMENT_NONE     = 0;
+  MOVEMENT_SLOW     = 1;
+  MOVEMENT_FAST     = 2;
+  MOVEMENT_SLEEPING = 4;
+  MOVEMENT_AWAKE    = 8;
+  MOVEMENT_RESTLESS = 16;
+}
+
+/*
+Enumeration of wifi network types
+*/
+enum WICED_BSS_TYPE {
+  WICED_BSS_INFRASTRUCTURE = 0;
+  WICED_BSS_ADHOC          = 1;
+  WICED_BSS_ANY            = 2;
+  WICED_BSS_MESH           = 3;
+  WICED_BSS_UNKNOWN        = -1;
+}
+
+/*
+Enumeration of wifi security modes
+*/
+enum WICED_SECURITY_TYPE {
+  WICED_SECURITY_OPEN           = 0;
+  WICED_SECURITY_WEP_PSK        = 1;          /* WEP_ENABLED                                 */
+  WICED_SECURITY_WEP_SHARED     = 32769;      /* WEP_ENABLED | SHARED_ENABLED                */
+  WICED_SECURITY_WPA_TKIP_PSK   = 2097154;    /* WPA_SECURITY | TKIP_ENABLED                 */
+  WICED_SECURITY_WPA_AES_PSK    = 2097156;    /* WPA_SECURITY | AES_ENABLED                  */
+  WICED_SECURITY_WPA_MIXED_PSK  = 2097158;    /* WPA_SECURITY | AES_ENABLED | TKIP_ENABLED   */
+  WICED_SECURITY_WPA2_AES_PSK   = 4194308;    /* WPA2_SECURITY | AES_ENABLED                 */
+  WICED_SECURITY_WPA2_TKIP_PSK  = 4194306;    /* WPA2_SECURITY | TKIP_ENABLED                */
+  WICED_SECURITY_WPA2_MIXED_PSK = 4194310;    /* WPA2_SECURITY | AES_ENABLED | TKIP_ENABLED  */
+  WICED_SECURITY_WPA2_FBT_PSK   = 1077936132; /* WPA2_SECURITY | AES_ENABLED | FBT_ENABLED   */
+  WICED_SECURITY_WPA3_SAE       = 16777220;   /* WPA3_SECURITY | AES_ENABLED                 */
+  WICED_SECURITY_WPA3_WPA2_PSK  = 20971524;   /* WPA3_SECURITY | WPA2_SECURITY | AES_ENABLED */
+
+  WICED_SECURITY_WPA_TKIP_ENT   = 35651586;   /* ENTERPRISE_EN | WPA_SECURITY | TKIP_ENABLED                */
+  WICED_SECURITY_WPA_AES_ENT    = 35651588;   /* ENTERPRISE_EN | AES_ENABLED | TKIP_ENABLED                 */
+  WICED_SECURITY_WPA_MIXED_ENT  = 35651590;   /* ENTERPRISE_EN | WPA_SECURITY | AES_ENABLED | TKIP_ENABLED  */
+  WICED_SECURITY_WPA2_TKIP_ENT  = 37748738;   /* ENTERPRISE_EN | WPA2_SECURITY | TKIP_ENABLED               */
+  WICED_SECURITY_WPA2_AES_ENT   = 37748740;   /* ENTERPRISE_EN | WPA2_SECURITY | AES_ENABLED                */
+  WICED_SECURITY_WPA2_MIXED_ENT = 37748742;   /* ENTERPRISE_EN | WPA2_SECURITY | AES_ENABLED | TKIP_ENABLED */
+  WICED_SECURITY_WPA2_FBT_ENT   = 1111490564; /* ENTERPRISE_EN | WPA2_SECURITY | AES_ENABLED | FBT_ENABLED  */
+
+  WICED_SECURITY_IBSS_OPEN      = 536870912;  /* IBSS_ENABLED                                */
+  WICED_SECURITY_WPS_OPEN       = 268435456;  /* WPS_ENABLED                                 */
+  WICED_SECURITY_SECURE         = 268435460;  /* WPS_ENABLED | AES_ENABLED                   */
+
+  WICED_SECURITY_UNKNOWN        = -1;
+
+  WICED_SECURITY_FORCE_32_BIT   = 0x7fffffff;
+}
+
+/*
+Enumeration of 802.11 radio bands
+*/
+enum WICED_802_11_BAND_TYPE {
+  WIFI_802_11_BAND_5GHZ   = 0; /* Denotes 5 GHz radio band                    */
+  WIFI_802_11_BAND_2_4GHZ = 1; /* Denotes 2.4 GHz radion band                 */
+}
+
+/*
+Enumeration is index into the msg_payload_platform_status_t.init_fail array
+*/
+enum PLATFORM_STATUS_IDX {
+  PLATFORM_STATUS_SPI_FAIL       = 0;
+  PLATFORM_STATUS_I2C_FAIL       = 1;
+  PLATFORM_STATUS_RGB_FAIL       = 2;
+  PLATFORM_STATUS_SEM_FAIL       = 3;
+  PLATFORM_STATUS_X4_FAIL        = 4;
+  PLATFORM_STATUS_SD_FAIL        = 5;
+  PLATFORM_STATUS_HTS_FAIL       = 6;
+  PLATFORM_STATUS_LUX_FAIL       = 7;
+  PLATFORM_STATUS_RTC_FAIL       = 8;
+  PLATFORM_STATUS_WIFI_FAIL      = 9;
+  PLATFORM_STATUS_WIFI_SCAN_FAIL = 10;
+}
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Message Payloads
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+message msg_payload_empty_t {
+}
+
+message msg_payload_ack_t {
+  OPCODE opcode = 1;
+}
+
+message msg_payload_str_t {
+  string str = 1;
+}
+
+message msg_payload_err_t {
+  OPCODE opcode = 1;
+  int32 errcode = 2;
+}
+
+message msg_payload_x4_reg_t {
+  X4_REG reg = 1;
+  int32 val = 2;
+}
+
+message msg_payload_x4f_reg_t {
+  X4F_REG reg = 1;
+  float val = 2;
+}
+
+message msg_payload_data_copy_t {
+  uint32 offset = 1;
+  uint32 len = 2;
+  bytes data = 3;
+}
+
+message msg_payload_data_write_t {
+  uint32 address = 1;
+  uint32 total = 2;
+  uint32 checksum = 3;
+}
+
+message msg_payload_data_copy_ack_t {
+  uint32 offset = 1;
+  uint32 ok = 2;
+}
+
+message msg_payload_data_write_ack_t {
+  uint32 address = 1;
+  uint32 checksum = 2;
+  uint32 ok = 3;
+}
+
+message msg_payload_vector_t {
+  int32 len = 1;
+  repeated float vec = 2;
+}
+
+message msg_payload_set_rgb_t {
+  int32 val = 1;
+}
+
+message msg_payload_scalar_t {
+  float val = 1;
+}
+
+message msg_payload_health_t {
+  // Flags
+  uint32 presence_detected = 1;
+  uint32 respiration_detected = 2;
+  uint32 movement_detected = 3;
+  // State info
+  uint32 movement_type = 4;
+  float distance = 5;
+  float distance_conf = 6;
+  float respiration_rpm = 7;
+  float respiration_conf = 8;
+  float rms = 9;
+  float temperature = 10;
+  float humidity = 11;
+  float lux = 12;
+  // Debug info
+  repeated float debug = 13;
+}
+
+message msg_payload_datetime_t {
+  uint32 year = 1;
+  uint32 month = 2;
+  uint32 day = 3;
+  uint32 hour = 4;
+  uint32 minute = 5;
+  uint32 second = 6;
+}
+
+message msg_payload_wifi_scan_t {
+  int32 networks_found = 1;
+}
+
+message msg_payload_wifi_record_t {
+  int32 index = 1;
+  int32 ssid_len = 2;
+  string ssid = 3;
+  bytes bssid = 4;
+  int32 rssi = 5;
+  WICED_BSS_TYPE bss_type = 6;
+  WICED_SECURITY_TYPE security = 7;
+  WICED_802_11_BAND_TYPE band = 8;
+  uint32 max_data_rate = 9;
+  uint32 channel = 10;
+}
+
+message msg_payload_platform_status_t {
+  bytes init_fail = 1;
+  uint32 x4_error = 2;
+}
+
+message msg_payload_log_data_t {
+  uint32 seq = 1;
+  uint32 len = 2;
+  bytes data = 3;
+}
+ 
+message msg_payload_int_param_t {
+  int32 value = 1;
+}
+ 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Commands
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+message client_command_t {
+  OPCODE opcode = 1;
+  
+  oneof payload {
+    msg_payload_empty_t empty = 2;
+    msg_payload_x4_reg_t x4_reg = 3;
+    msg_payload_set_rgb_t rgb = 4;
+    msg_payload_str_t str = 5;
+    msg_payload_data_copy_t data_cp = 6;
+    msg_payload_data_write_t data_wr = 7;
+    msg_payload_datetime_t datetime = 8;
+    msg_payload_x4f_reg_t x4f_reg = 9;
+    msg_payload_int_param_t val = 10;
+  }
+}
+
+message server_response_t {
+  OPCODE opcode = 1;
+
+  oneof payload {
+    msg_payload_ack_t ack = 2;
+    msg_payload_err_t err = 3;
+    msg_payload_x4_reg_t x4_reg = 4;
+    msg_payload_vector_t vector = 5;
+    msg_payload_scalar_t scalar = 6;
+    msg_payload_str_t str = 7;
+    msg_payload_data_copy_ack_t data_cp_ack = 8;
+    msg_payload_data_write_ack_t data_wr_ack = 9;
+    msg_payload_health_t health = 10;
+    msg_payload_x4f_reg_t x4f_reg = 11;
+    msg_payload_wifi_scan_t wifi_scan = 12;
+    msg_payload_wifi_record_t wifi_record = 13;
+    msg_payload_platform_status_t platform_status = 14;
+    msg_payload_log_data_t log_data = 15;
+  }
+}
+
