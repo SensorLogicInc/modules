@@ -8,8 +8,7 @@ The hardware platform is the modular 2-piece SLMX4, which is comprised of a base
 </p>
 
 ### Mechanical Files
- - [SLMX4-Base Mechanical Drawing](https://modules-release.s3-us-west-2.amazonaws.com/hardware/SLMX4-Base+2P1+PCB+Mechanical.PDF)
- - [SLMX4 EPAM Mechanical Drawing](https://modules-release.s3-us-west-2.amazonaws.com/hardware/epam_0p1_mechanical_drawing.pdf)
+ - [SLMX4-Base + EPAM 0P1 Mechanical Drawing](https://modules-release.s3-us-west-2.amazonaws.com/hardware/SLMX4-Base+2P1+PCB+Mechanical.PDF)
  - [SLMX4-Base + EPAM 0P1 Step File](https://modules-release.s3-us-west-2.amazonaws.com/hardware/SLMX4-Base+2P1.step)
 
 ## SLMX4 Health Firmware and App
