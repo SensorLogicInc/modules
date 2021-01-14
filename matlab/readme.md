@@ -1,6 +1,6 @@
-# XEP Matlab Connector Notes
+# XEP MATLAB Connector Notes
 
-The XEP Radar Connector is an interface which allows Matlab to interact with the
+The XEP Radar Connector is an interface which allows [MATLAB](https://www.mathworks.com/products/matlab.html) to interact with the
 X4 UWB radar remotely. From the Matlab perspective, outside of the initial setup, the functionality of
 this connector should act identical compared to the SensorLogic Linux XEP MATLAB Connector.
 
@@ -43,26 +43,26 @@ to the XEP driver.
 
 | Old Name         | Updated Name      | Notes |
 |:-----------------|:------------------|:------|
-| DACMin           | dac_min           ||
-| DACMax           | dac_max           ||
-| DACStep          | dac_step          ||
-| PPS              | pps               ||
-| Iterations       | iterations        ||
+| DACMin           | dac_min           | minimum dac value >= 0 |
+| DACMax           | dac_max           | maximum dac value <= 2047 |
+| DACStep          | dac_step          | dac step size exponent, 2^n, n = (0,1,2,or 3) |
+| PPS              | pps               | number of pulses per dac step to average |
+| Iterations       | iterations        | number of pulses to average|
 | PRF              | prf_div           | fex4 PRF set is same as prf_div |
-|                  | prf               ||
-| SamplingRate     | fs                ||
-| SamplersPerFrame | num_samples       ||
-|                  | frame_length      ||
-| RxWait           | rx_wait           ||
-|                  | tx_region         ||
-|                  | tx_power          ||
-| DownConvert      | ddc_en            ||
-|                  | frame_offset      ||
-|                  | frame_start       ||
-|                  | frame_end         ||
-|                  | unambiguous_range ||
+|                  | prf               | pulse repition frequency in Hertz |
+| SamplingRate     | fs                | sampling rate in Hertz (23.328 GHz) |
+| SamplersPerFrame | num_samples       | number of samples per frame |
+|                  | frame_length      | total frame length in meters |
+| RxWait           | rx_wait           | set delay for frame_offset |
+|                  | tx_region         | set center frequency, Tx3 = 7.29 GHz, Tx4 = 8.748 GHz|
+|                  | tx_power          | set tx power (0, 1, or 2) |
+| DownConvert      | ddc_en            | digital down convernt enable for IQ data|
+|                  | frame_offset      | delay according to rx_wait|
+|                  | frame_start       | set frame start delay in meters |
+|                  | frame_end         | set frame end in meters |
+|                  | unambiguous_range | unambiguous range in meters base on prf |
 |                  | ur                | same as unambiguous_range |
-|                  | sweep_time        ||
+|                  | sweep_time        | rx sweep time to collect a radar frame based on processing gain|
 
 ## Provide Scripts
 ### VCOM Test
