@@ -208,122 +208,6 @@ classdef vcom_xep_radar_connector < handle
             obj.getData();
             obj.updateNumberOfSamplers();
         end
-
-        %% Function to set pin direction
-%         function status = SetIOPinDirection(obj,bank,pin,direction)      
-%             % SetIOPinDirection Set the direction of a pin on the BBB
-%             % This must be done prior to using a custom pin to set it up
-%             % correctly.
-%             %
-%             % Bank is the connector to use (8 or 9)
-%             % Pin is the pin on that bank, 1 indexed
-%             % Direction 'input' or 'output'.  0 and 1 are also valid directions where 1 is output
-%             %
-%             % Example:
-%             %   radar = xep_radar_connector;
-%             %   modules = radar.ConnectedModules;
-%             %   radar.Open(modules{1});
-%             %   radar.SetIOPinDirection(8,45,'output');
-%             %   radar.SetIOPinDirection(8,46,'input');
-%             %   radar.WriteIOPin(8,45,1);
-%             %   radar.ReadIOPin(8,46);
-%             %   radar.Close;
-% 
-%             if (ischar(direction) == 1)
-%                 if strcmp(direction, 'output')
-%                     direction = 1;
-%                 end
-%                 if strcmp(direction, 'input')
-%                     direction = 0;
-%                 end
-%                 if strcmp(direction, '0')
-%                     direction = 0;
-%                 end
-%                 if strcmp(direction, '1')
-%                     direction = 1;
-%                 end
-%             end
-%             
-%             dirVal = direction;
-%             if (dirVal == 0) || (dirVal == 1)
-%                 cmd = uint8(['SetIOPinDirection(' num2str(bank) ',' num2str(pin) ',' num2str(dirVal) ')']);
-%                 write(obj.usb_conn, cmd, 'uint8');
-%                 status = str2double(obj.getData());
-%             end
-%         end
-        
-        
-        %% Function to set pin value
-%         function status = WriteIOPin(obj,bank,pin,value)
-%             % WriteIOPin Set the value of a pin on the BBB
-%             %
-%             % SetIOPinDirection must be run prior to using a custom pin.
-%             %
-%             % Bank is the connector to use (8 or 9)
-%             % Pin is the pin on that bank, 1 indexed
-%             % Value 0 or 1.  The inputs 'low' and 'high' are also valid
-%             %
-%             % 
-%             % Example:
-%             %   radar = xep_radar_connector;
-%             %   modules = radar.ConnectedModules;
-%             %   radar.Open(modules{1});
-%             %   radar.SetIOPinDirection(8,45,'output');
-%             %   radar.SetIOPinDirection(8,46,'input');
-%             %   radar.WriteIOPin(8,45,1);
-%             %   radar.ReadIOPin(8,46);
-%             %   radar.WriteIOPin(8,45,'low');
-%             %   radar.ReadIOPin(8,46);
-%             %   radar.Close;
-% 
-%             if (ischar(value) == 1)
-%                 if strcmp(value, 'high')
-%                     value = 1;
-%                 end
-%                 if strcmp(value, 'low')
-%                     value = 0;
-%                 end
-%                 if strcmp(value, '0')
-%                     value = 0;
-%                 end
-%                 if strcmp(value, '1')
-%                     value = 1;
-%                 end
-%             end
-%             valueVal = value;
-%             if (valueVal == 0) || (valueVal == 1)
-%                 cmd = uint8(['WriteIOPin(' num2str(bank) ',' num2str(pin) ',' num2str(valueVal) ')']);
-%                 write(obj.usb_conn, cmd, 'uint8');
-%             end
-%         end
-        
-        %% Function to read pin value
-%         function Value = ReadIOPin(obj,bank,pin)
-%             % ReadIOPin Read the current value of being received on the pin
-%             %
-%             % SetIOPinDirection must be run prior to using a custom pin.
-%             %
-%             % Bank is the connector to use (8 or 9)
-%             % Pin is the pin on that bank, 1 indexed
-%             %
-%             % Value returns  0 or 1 with the digitial value of the pin
-%             % 
-%             % Example:
-%             %   radar = xep_radar_connector;
-%             %   modules = radar.ConnectedModules;
-%             %   radar.Open(modules{1});
-%             %   radar.SetIOPinDirection(8,45,'output');
-%             %   radar.SetIOPinDirection(8,46,'input');
-%             %   radar.WriteIOPin(8,45,1);
-%             %   radar.ReadIOPin(8,46);
-%             %   radar.WriteIOPin(8,45,'low');
-%             %   radar.ReadIOPin(8,46);
-%             %   radar.Close;
-%             
-%             cmd = uint8(['ReadIOPin(' num2str(bank) ',' num2str(pin) ')']);
-%             write(obj.usb_conn, cmd, 'uint8');
-%             Value = str2double(obj.getData());
-%         end
     end
         
     methods(Hidden)
@@ -474,35 +358,6 @@ classdef vcom_xep_radar_connector < handle
             end
         end
         
-        %% Function to get a full frame of data from the radar and check it for errors
-%         function a = getFrameData(obj,size)
-%             if obj.DEV_v2_packet_type == 0
-%                 i = 1;                                    %Iteration value for length of string
-%                 a = [];
-%                 tic
-%                 while(1==1)                                 %Loop until ack recieved
-%                      bytes = obj.usb_conn.NumBytesAvailable;
-%                      if ((bytes == size) || (toc > 1))          %If char in buffer
-%                          temp = read(obj.usb_conn, bytes, 'uint8');    %read it and put it on "stack"
-%                          a = [a, temp]; %#ok                %read it and put it on "stack"                     
-%                          if (obj.parseIsDone(a))
-%                              a=a(1:end-5);                  %Pull the ack out of the signal
-%                              obj.parseErrReturn(a);
-%                              break;                         %break the loop and continue program
-%                          end
-%                          i = i+1;                       %else, get ready for the next char
-%                      end;
-%                 end;     %Wait for ack
-%             else
-%                 while (obj.usb_conn.NumBytesAvailable < 4)
-%                 end
-%                 packetlength = read(obj.usb_conn, 1, 'int32');
-%                 a = read(obj.usb_conn, packetlength, 'uint8');
-%                 obj.parseErrReturn(a);
-%                 a=a(1:end-5);
-%             end
-%         end
-        
         %% Test the return to test and pull out error messages
         function parseErrReturn(obj, returnString)
             if (length(returnString) > 6)
@@ -531,15 +386,6 @@ classdef vcom_xep_radar_connector < handle
         function [] = updateNumberOfSamplers(obj)
             obj.numSamplers = obj.Item('SamplersPerFrame');
         end
-        
-        %% Create a container.Map containing all the possible registers on the chip
-%         function [] = initializeRegisterMap(obj)
-%             varList = obj.ListVariables();
-%             obj.Registers = '';
-%             for i = 1:length(varList)
-%                 obj.Registers.(varList{i}) = varList{i};
-%             end
-%         end
 
         %% Start an instance of the connector
         function StartServer(obj, com_port)
@@ -562,22 +408,5 @@ classdef vcom_xep_radar_connector < handle
             write(obj.usb_conn, 'NVA_CreateHandle()', 'uint8');
             obj.getData();
         end
-    
-        %% Instruct the connector to send the length of the packet as the first word of the packet
-%         function SendPacketLengths(obj, value)
-%             % This instructs the beaglebone to send a previous frame while
-%             % starting collection of a new frame.  This results in faster
-%             % framerates.
-%             %
-%             % Note: The frame returned from this function was a PREVIOUS
-%             % frame collection time.
-% 
-%             obj.DEV_v2_packet_type = value;
-%             cmd = uint8(['SendPacketLengths(',num2str(value),')']);
-%             write(obj.usb_conn, cmd, 'uint8');
-% 
-%             obj.getData();
-%         end
-
     end
 end
