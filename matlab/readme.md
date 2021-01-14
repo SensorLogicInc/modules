@@ -65,7 +65,7 @@ unique to the XEP driver.
 
 * `fex4` is legacy x4 driver not in current use
 
-## Provides Scripts
+## Provided Scripts
 
 ### VCOM Test
 There is an included script called `vcom_test.m`. This provides a simple plot window of normalized radar 
@@ -91,3 +91,16 @@ tx_region test ok? 1
 tx_power test ok? 1
 ddc_en test ok? 1
 ```
+
+### Timer Test
+There is an included script called `timer_test.m`. This demonstrates how to use a Matlab timer to poll
+the radar at a governed framerate.
+
+When the script is run, radar data is collected for 10 seconds. After 10 seconds, the radar data is 
+plotted where the x-axis represents the collection of radar frames (long time), and the y-axis represents
+the signal amplitude (short time).
+
+In the example run, a metal plate was waved towards and away from the radar throughout.
+<p align="center">
+  <img src="../images/matlab/timer_test.png" />
+</p>
