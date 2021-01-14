@@ -16,7 +16,7 @@ right.
 
 |Update Firmware Settings|Normal Settings|
 |-|-|
-|![](images/firmware_update/slmx4_base_fw_update_boot_pins.jpg)|![](images/firmware_update/slmx4_base_normal_boot_pins.jpg)|
+|![](../images/firmware_update/slmx4_base_fw_update_boot_pins.jpg)|![](../images/firmware_update/slmx4_base_normal_boot_pins.jpg)|
 
 Once the boot pins are set, plug in the USB cable to power the SLMX4-Base. When
 the boot pins are set in the firmware update mode, the RGB LED will look like
