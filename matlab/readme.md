@@ -97,8 +97,8 @@ There is an included script called `timer_test.m`. This demonstrates how to use 
 the radar at a governed framerate.
 
 When the script is run, radar data is collected for 10 seconds. After 10 seconds, the radar data is 
-plotted where the x-axis represents the collection of radar frames (long time), and the y-axis represents
-the signal amplitude (short time).
+plotted where the x-axis represents the collection of radar frames, and the y-axis represents each radar
+frame. Distance increases downward along the y-axis, and the color intensity represents signal amplitude.
 
 In the example run, a metal plate was waved towards and away from the radar throughout.
 <p align="center">
