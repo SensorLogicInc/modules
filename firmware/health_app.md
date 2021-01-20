@@ -50,3 +50,17 @@ If there is fast movement for more than 4 seconds, the respiration waveform will
 <p align="center">
   <img src="../images/health_app/fast_movement_reset.png" />
 </p>
+
+### Save CSV
+There is a checkbox next to the 'Start' button. When this is checked, data in CSV format will be saved to the `data` folder until the control is unchecked again.
+
+Example:
+```
+PresenceDeteced,RespirationDetected,MovementDetected,MovementType,Distance,DistanceConf,RespirationRpm,RespirationConf,Rms,RmsStd,Humidity,Temperature,Lux,SPL,UTC Time(-7)
+1,0,0,0,0.76,100,24.6,59,0.8012381,0.0237974815368652,16.90,31.40,62.31,,09:47:48.1
+1,0,0,0,0.76,100,24.6,60,0.7973012,0.0240422878265381,17.00,31.30,62.31,,09:47:48.2
+1,1,0,0,0.76,100,24.6,61,0.796906,0.0242731819152832,16.90,31.40,62.31,,09:47:48.3
+1,1,0,0,0.76,100,24.6,62,0.7962412,0.0244450187683105,17.00,31.40,62.31,,09:47:48.4
+1,1,0,0,0.74,100,24.6,63,0.7921052,0.0245459403991699,17.00,31.40,62.31,,09:47:48.5
+1,1,0,0,0.73,100,24.6,64,0.7969559,0.0244412670135498,17.10,31.40,62.31,,09:47:48.6
+```
