@@ -54,7 +54,7 @@ unique to the XEP driver.
 |                  | frame_length      | frame length in steps of 96 sampling bins ||
 | RxWait           | rx_wait           | sets delay for frame_offset ||
 |                  | tx_region         | radar center frequency, Tx3 = 7.29 GHz, Tx4 = 8.748 GHz||
-|                  | tx_power          | tx power level (0, 1, or 2) ||
+|                  | tx_power          | tx power level (0 = off, 1 = low, 2 = med, 3 = high) ||
 | DownConvert      | ddc_en            | digital down conversion enable for IQ data||
 |                  | frame_offset      | frame offset position in meters according to rx_wait||
 |                  | frame_start       | frame start position in meters ||
