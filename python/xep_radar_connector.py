@@ -135,17 +135,15 @@ class xep_radar_connector:
         status = self.ser.read_until()
         # print('Status after VarGetValue_ByName({}): {}'.format(registerName, status))
 
-        # TODO: make it work for both python2 and 3. Currently Python3 has different results
-        # register = int(status[0])
-        # print(status)
+        # TODO: make it work for both python2 and 3
         # chr_arr = [chr(x) for x in status]
-        chr_arr = status  # python 2?
-        # angle_bracket_idx = chr_arr.index('<')
-        angle_bracket_idx = chr_arr.index('<') if '<' in chr_arr else -1
+        chr_arr = status
+        angle_bracket_idx = chr_arr.index(b'<') if b'<' in chr_arr else -1
  
         if angle_bracket_idx != -1:
-            str_arr = ''.join(chr_arr[:angle_bracket_idx])
-            if '.' in str_arr:
+            # str_arr = ''.join(chr_arr[:angle_bracket_idx])  # py27
+            str_arr = chr_arr[:angle_bracket_idx]  # python3
+            if b'.' in str_arr:
                 register = float(str_arr)
             else:
                 register = int(str_arr)
@@ -212,8 +210,8 @@ class xep_radar_connector:
 
             i += 1
 
-        # frame_int_array = [x for x in frame]  # from bytes to int array
-        frame_int_array = [int(f.encode('hex'), 16) for f in frame]  # py27
+        frame_int_array = [x for x in frame]  # from bytes to int array
+        # frame_int_array = [int(f.encode('hex'), 16) for f in frame]  # py27
         uint8_arr = np.array(frame_int_array, dtype="uint8")
         uint32_arr = uint8_arr.view('float32')
 
