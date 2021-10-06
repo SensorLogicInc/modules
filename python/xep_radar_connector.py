@@ -46,16 +46,10 @@ class xep_radar_connector:
         self.TryUpdateChip('pps', self.pulses_per_step)
         self.TryUpdateChip('dac_min', self.dac_min)
         self.TryUpdateChip('dac_max', self.dac_max)
-        # self.TryUpdateChip('rx_wait', self.iterations)  # crazy bug I only noticed recently
         self.TryUpdateChip('frame_start', self.area_start)
         self.TryUpdateChip('frame_end', self.area_end)
-        self.TryUpdateChip('frame_offset', 0.18)  # sneaky. Removes some area. TODO understand better
-        self.TryUpdateChip('tx_power', 3)  # TODO parameter or whatever
-
-        # can't change
-        # self.TryUpdateChip('PRF', 14000000)
-        # self.TryUpdateChip('rx_wait', self.rx_wait)
-        # self.TryUpdateChip('unambiguous_range', 7.0)
+        # self.TryUpdateChip('frame_offset', 0.18)
+        self.TryUpdateChip('tx_power', 3)
 
         self.bin_length = self.Item('res')
         self.area_start = self.Item('frame_start')
@@ -68,14 +62,10 @@ class xep_radar_connector:
         print('bin_length res: {}. area_start: {}. area_end: {}'.format(self.bin_length, self.area_start, self.area_end))
         print('prf: {}.'.format(self.prf))
 
-        # self.TryUpdateChip('PRF', 1)
         # self.TryUpdateChip('prf_div', 16)  # default was 16 to result in 15187500.0 PRF
-        # self.TryUpdateChip('prf_div', 4)  # goes over max of 40.5MHz somehow... 60MHz and unambiguous range is 2.46m
-        # self.TryUpdateChip('prf_div', 12) 
-        self.TryUpdateChip('prf_div', 25)
         print('PRF: {}.'.format(self.Item('PRF')))
 
-        print('SamplingRateFS: {}.'.format(self.SamplingRateFS))  # TODO this is not the magic 23.238 when I have downconversion!
+        print('SamplingRateFS: {}.'.format(self.SamplingRateFS))
         print('rx_wait: {}.'.format(self.rx_wait))
 
         print('numSamplers(num bins):', self.numSamplers)
@@ -88,19 +78,7 @@ class xep_radar_connector:
             'frame_length', 'frame_start', 'frame_end', 'frame_offset', 'unambiguous_range', 'sweep_time', 'prf', 'fs', 'SamplingRate', 'dac_step', 'tx_power']:
             print('{} = {}'.format(var, self.Item(var)))
 
-        # fasttime_ax = np.arange((area_start-1e-5), (area_end-1e-5) + bin_length, bin_length)
-
-        # self.bin_length = 8 * 1.5e8 / 23.328e9  # TODO better to get this from board .res
-        self.bin_length =  0.05144033 
-        # self.fast_sample_point = int((self.area_end - self.area_start) / self.bin_length + 2)
-        self.fast_sample_point = int((self.area_end - self.area_start) / self.bin_length + 1)
-        print('self.fast_sample_point: {}'.format(self.fast_sample_point))  # TODO wrong?
-
-        # fasttime_ax = np.arange((area_start - 1e-5), (area_end - 1e-5) + bin_length, bin_length)
-        fasttime_ax = np.arange((self.area_start - 1e-5), (self.area_end - 1e-5), self.bin_length)
-        # fasttime_ax = np.arange((area_start-1e-5 + 23 * bin_length), (area_end-1e-5) + bin_length, bin_length)
-
-        print('fasttime_ax.shape', fasttime_ax.shape)
+        self.bin_length =  0.05144033
 
     def Open(self, connectString='X4'):
         cmd = "OpenRadar('{}')".format(connectString).encode()
@@ -188,22 +166,14 @@ class xep_radar_connector:
 
         while True:
             if self.ser.in_waiting == frameSize:
-                # print('self.ser.in_waiting == frameSize')
                 frame = self.ser.read(frameSize)
-                # print(len(frame))
-                frame = frame[0:-5]  # todo double check
-                # print(len(frame))
+                frame = frame[0:-5]
                 break
 
             # TODO timeout everytime! 
             if i == 15000:
-                # print('Timeout while getting raw frame. i = {}'.format(i))
-                # frame = self.ser.read(self.ser.in_waiting)
                 frame = self.ser.read(frameSize)
-                # frame = self.ser.read_until()
-                frame = frame[0:-5]  # todo double check
-                # print('frame len: {}'.format(len(frame)))
-                # frame = zeros(1, obj.numSamplers)
+                frame = frame[0:-5]
                 break
 
             i += 1
@@ -228,7 +198,6 @@ class xep_radar_connector:
         else:
             frameSize = self.numSamplers * 4 + 5
 
-        # print('frameSize: {}. in_waiting: {}'.format(frameSize, self.ser.in_waiting))
         while True:
             if self.ser.in_waiting == frameSize:
                 frame = self.ser.read(frameSize)
@@ -328,7 +297,7 @@ class xep_radar_connector:
         if self.x4DownConverter == 1:
             iq_vec = double_frame[0::2] + 1j * double_frame[1::2]
         else:
-            # Raw RF direct data
+            # Raw RF direct data  # TODO current not dealing with it
             pass
 
         # iq_vec = frame  # TODO is this best, do we ever want non normalised or double data?
@@ -388,23 +357,11 @@ if __name__ == "__main__":
     slmx4 = xep_radar_connector()
     slmx4.Open('X4')
 
-    # As a side-effect many settings on write will cause the numSamplers
-    # variable to update
+    # As a side-effect many settings on write will cause the numSamplers variable to update
     print('num bins before running anything = {}'.format(slmx4.numSamplers))
 
     all_vars = slmx4.ListVariables()
     print(all_vars)
-
-    # Setting some variables
-    # slmx4.TryUpdateChip('iterations', 16)
-    # slmx4.TryUpdateChip('pps', 300)
-    # slmx4.TryUpdateChip('dac_min', 949)
-    # slmx4.TryUpdateChip('dac_max', 1100)
-    # slmx4.TryUpdateChip('rx_wait', 0)
-    # slmx4.TryUpdateChip('frame_start', 0.4)
-    # slmx4.TryUpdateChip('frame_end', 5.0)  # 8m
-    # slmx4.TryUpdateChip('ddc_en', 1)
-    # slmx4.TryUpdateChip('frame_offset', 0.18)
 
     # TODO float/double problems: 'prf', 'frame_start', 'frame_end', 
     for var in ['res', 'iterations', 'pps', 'dac_min', 'dac_max', 'dac_step', 'rx_wait', 'ddc_en', 'num_samples', \
