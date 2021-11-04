@@ -22,7 +22,7 @@ The _[MATLAB Firmware and Connector](matlab/readme.md)_ allows the user to use a
 - [Health & Development Firmware](firmware)
 - [XEP MATLAB Connector](matlab)
 - [Protocol Buffers Info](protocol_buffers)
-- [Code](slmx4_projects/vcom_xep_matlab_server)
+- [Code](https://github.com/SensorLogicInc/modules/tree/main/slmx4_projects/vcom_xep_matlab_server)
 - [USB Driver](usb_driver)
 
 ## Folder Structure
