@@ -18,6 +18,13 @@ The [Health Firmware](https://modules-release.s3-us-west-2.amazonaws.com/firmwar
 ## SLMX4 MATLAB Firmware and Connector
 The _[MATLAB Firmware and Connector](matlab/readme.md)_ allows the user to use an efficient, high-level development environment, like MATLAB, to query the module for raw radar data for custom algorithm and application development. The data comes in two flavors, real RF data, effectively sampled at 23.328 GSps, or In-Phase/Quadrature (IQ) data that has been downconverted and decimated. Complete control of the radar is available by being able to query and set every radar register parameter. For example, changing certain parameters will affect the frame rate versus processing gain, depending on the application and required SNR. 
 
+### Quick Links
+- [Health & Development Firmware](firmware)
+- [XEP MATLAB Connector](matlab)
+- [Protocol Buffers Info](protocol_buffers)
+- [Code](https://github.com/SensorLogicInc/modules/tree/main/slmx4_projects/vcom_xep_matlab_server)
+- [USB Driver](usb_driver)
+
 ## Folder Structure
 ```
 ├── firmware
