@@ -1,1 +1,4 @@
 theme: jekyll-theme-slate
+title: SensorLogic Radar Modules
+description: "Modules based on the Xethru-X4 Ultra-wideband (UWB) Impulse Radar"
+show_downloads: true
