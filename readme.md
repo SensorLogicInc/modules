@@ -7,7 +7,7 @@
 &nbsp; 
 
 <p align="center">
-  <a href="https://sensorlogicinc.github.io/modules/"><img src="assets/images/sli_logo.png" style="width:25%" /></a>
+  <a href="https://sensorlogicinc.github.io/modules/"><img src="images/sli_logo.png" style="width:25%" /></a>
 </p>
 
 &nbsp; 
@@ -50,3 +50,5 @@ The _[MATLAB Firmware and Connector](matlab/readme.md)_ allows the user to use a
 └── usb_driver
     └── inf/                            # Contains the USB VCOM device driver for Windows 
 ```
+
+**[Home](https://www.sensorlogic.ai/)**
