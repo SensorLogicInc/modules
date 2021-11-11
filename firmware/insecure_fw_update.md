@@ -1,6 +1,6 @@
 # Insecure Firmware Update Guide
 
-[Back](../)
+[Back](readme.md)
 
 This is a guide on how to manually update the firmware on a SLMX4-Base using the NXP-MCUBootUtility tool.
 
