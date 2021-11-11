@@ -1,6 +1,6 @@
 # SLMX4 - Health App User Guide
 
-[Back](../)
+[Back](readme.md)
 
 The following guide provides information about downloading and running the SLMX4 Health App. To update to the SLMX4 Health Firmware, please see the [Updating the SLMX4 Firmware Guide](insecure_fw_update.md).
 
