@@ -1,4 +1,4 @@
-#### [Firmwares](firmware) &nbsp;&nbsp;&nbsp;&nbsp;[XEP MATLAB Connector](matlab) &nbsp;&nbsp;&nbsp;&nbsp;[Proto Buff Info](protocol_buffers) &nbsp;&nbsp;&nbsp;&nbsp;[USB Driver](usb_driver) &nbsp;&nbsp;&nbsp;&nbsp;[Code](https://github.com/SensorLogicInc/modules/tree/main/slmx4_projects/vcom_xep_matlab_server)
+#### [Firmware](firmware) &nbsp;&nbsp;&nbsp;&nbsp;[XEP MATLAB Connector](matlab) &nbsp;&nbsp;&nbsp;&nbsp;[Proto Buff Info](protocol_buffers) &nbsp;&nbsp;&nbsp;&nbsp;[USB Driver](usb_driver) &nbsp;&nbsp;&nbsp;&nbsp;[Code](https://github.com/SensorLogicInc/modules/tree/main/slmx4_projects/vcom_xep_matlab_server) &nbsp;&nbsp;&nbsp;&nbsp;[X4 Radar Primer](docs/XTAN-13_XeThruX4RadarUserGuide_rev_a.pdf)
 
 # Radar Modules
 
@@ -23,7 +23,7 @@ The hardware platform is the modular 2-piece SLMX4, which is comprised of a base
  - [SLMX4-Base + EPAM 0P1 Mechanical Drawing](https://modules-release.s3-us-west-2.amazonaws.com/hardware/SLMX4-Base+2P1+PCB+Mechanical.PDF)
  - [SLMX4-Base + EPAM 0P1 Step File](https://modules-release.s3-us-west-2.amazonaws.com/hardware/SLMX4-Base+2P1.step)
  - [SLMX4-Base + EPAM 0P2 Block Diagram](images/slmx4-base_epam0p2_system_architecture.png)
- - [X4 Radar Primer](cocs/XTAN-13_XeThruX4RadarUserGuide_rev_a.pdf)
+ - [X4 Radar Primer](docs/XTAN-13_XeThruX4RadarUserGuide_rev_a.pdf)
 
 ## SLMX4 Health Firmware and App
 The [Health Firmware](https://modules-release.s3-us-west-2.amazonaws.com/firmware/slmx4_base_usb_vcom_pb_dsp-epam0P1.s19) runs our proprietary algorithms to identify the presence of, and distance to, a human target. If conditions are right, the human respiration is calculated within +/-1 RPM, out to 5 meters. The data is transmitted via USB or Wi-Fi and is displayed on a basic yet straightforward Windows Forms App, the [SLMX4 Health UI](firmware/health_app.md), ultimately displaying the subject's breathing pattern in real-time.
