@@ -8,7 +8,9 @@ This is a guide on how to manually update the firmware on a SLMX4-Base using the
 - [NXP-MCUBootUtility Tool](https://github.com/JayHeng/NXP-MCUBootUtility/releases): Instructions using this tool shown below
 - [MCUXpresso Secure Provisioning Tool](https://www.dropbox.com/sh/625jy4ovpvaticd/AAAo25quFGzx2itQyhBfPT63a?dl=0): Alternate method to update SLMX4 firmware
 
-## Step 1: Set the boot pins
+## Using the NXP-MCUBootUtility Tool
+
+### Step 1: Set the boot pins
 
 Before we can use the tool, we need to set the boot pins on the SLMX4-Base itself.
 When using the NXP-MCUBootUtility, set the SW4 pins to match the image on the
@@ -25,7 +27,7 @@ Once the boot pins are set, plug in the USB cable to power the SLMX4-Base. When
 the boot pins are set in the firmware update mode, the RGB LED will look like
 a feint violet color.
  
-## Step 2: Start NXP-MCUBootUtility
+### Step 2: Start NXP-MCUBootUtility
 
 When you start the NXP-MCUBootUtility for the first time, you'll need to make
 sure to select the correct NPX device. This will populate the vendor and product
@@ -46,7 +48,7 @@ will change.
   <img src="../images/firmware_update/boot_util_2.png" />
 </p>
 
-## Step 3: Update the Firmware
+### Step 3: Update the Firmware
 
 In the green box, click the 'Browse' button and select the `.s19` firmware file
 you wish to update. Since the firmware files are `.s19` files, choose the option
@@ -73,10 +75,12 @@ Depending on the size of the firmware file, it can take a while to finish. Once
 the update is done, the program will play a sound. The progress bar will also be
 completely full.
 
-## Step 4: Reset the Boot Pins
+### Step 4: Reset the Boot Pins
 
 Close the program and then unplug the USB cable from the SLMX4-Base.
 
 Next, reset the boot pins for normal operation, then plug the USB in again. The
 SLMX4-Base should then boot normally and execute whatever firmware which was 
 updated.
+
+## Using the MCUXpresso Secure Provisioning Tool
