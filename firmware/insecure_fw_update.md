@@ -5,7 +5,8 @@
 This is a guide on how to manually update the firmware on a SLMX4-Base using the NXP-MCUBootUtility tool.
 
 ## Downloads
-- [NXP-MCUBootUtility Tool](https://github.com/JayHeng/NXP-MCUBootUtility/releases)
+- [NXP-MCUBootUtility Tool](https://github.com/JayHeng/NXP-MCUBootUtility/releases): Instructions using this tool shown below
+- [MCUXpresso Secure Provisioning Tool](https://www.dropbox.com/sh/625jy4ovpvaticd/AAAo25quFGzx2itQyhBfPT63a?dl=0): Alternate method to update SLMX4 firmware
 
 ## Step 1: Set the boot pins
 
