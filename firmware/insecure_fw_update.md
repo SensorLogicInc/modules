@@ -25,7 +25,7 @@ right.
 
 Once the boot pins are set, plug in the USB cable to power the SLMX4-Base. When
 the boot pins are set in the firmware update mode, the RGB LED will look like
-a feint violet color.
+a faint violet color.
  
 ### Step 2: Start NXP-MCUBootUtility
 
@@ -84,3 +84,107 @@ SLMX4-Base should then boot normally and execute whatever firmware which was
 updated.
 
 ## Using the MCUXpresso Secure Provisioning Tool
+
+### Step One: Download and Unzip Software
+
+Select this link:
+- [MCUXpresso Secure Provisioning Tool](https://www.dropbox.com/sh/625jy4ovpvaticd/AAAo25quFGzx2itQyhBfPT63a?dl=0)
+
+Check all three boxes and select download
+
+<p align="center">
+  <img src="../images/MCUXpresso_firmware_update/1.png" />
+</p>
+
+Next, extract the files
+
+<p align="center">
+  <img src="../images/MCUXpresso_firmware_update/2.png" />
+</p>
+
+### Step Two: Install the Software
+
+Open the newly extracted file and click on the "MCUXpresso_Secure_Provisioning_v3.1.exe" file
+
+<p align="center">
+  <img src="../images/MCUXpresso_firmware_update/3.png" />
+</p>
+
+Close the installer and launch the MCUXpresso Secure Provisioning v3.1 software
+
+<p align="center">
+  <img src="../images/MCUXpresso_firmware_update/4.png" />
+</p>
+
+### Step Three: Software Setup
+
+The first time you run the provisioning tool, you will be greeted with this window:
+
+<p align="center">
+  <img src="../images/MCUXpresso_firmware_update/5.PNG" />
+</p>
+
+The current SLMX4 uses the MIMXRT106S and so you will make this selection:
+
+<p align="center">
+  <img src="../images/MCUXpresso_firmware_update/6.PNG" />
+</p>
+
+Click "Create" and this window will appear:
+
+<p align="center">
+  <img src="../images/MCUXpresso_firmware_update/7.PNG" />
+</p>
+
+### Step Four: Set the boot pins
+
+Before we can use the tool, we need to set the boot pins on the SLMX4-Base itself.
+When using the MCUXpresso Secure Provisioning Tool, set the SW4 pins to match the image on the
+left.
+
+Once the firmware has been updated, set the SW4 pins to match the image on the
+right.
+
+|Update Firmware Settings|Normal Settings|
+|-|-|
+|![](../images/firmware_update/slmx4_base_fw_update_boot_pins.jpg)|![](../images/firmware_update/slmx4_base_normal_boot_pins.jpg)|
+
+Once the boot pins are set, plug in the USB cable to power the SLMX4-Base. When
+the boot pins are set in the firmware update mode, the RGB, green and red leds will be on and static.
+
+<p align="center">
+  <img src="../images/MCUXpresso_firmware_update/8.png" />
+</p>
+
+### Step Five: Flash the SLMX4 with the Firmware
+
+Next, we will select an image to flash onto the SLMX4. Select "Browse..." next to the "Source executable image:" and select the .s19 file you wish to flash.
+If you "Configuration Helper" pop-up, click on "Deselect All" and click "OK".
+
+<p align="center">
+  <img src="../images/MCUXpresso_firmware_update/9.png" />
+</p>
+
+Next, for the "DCD (binary)" option, select "From Source Image" from the dropdown menu. Select "Build Image"
+
+<p align="center">
+  <img src="../images/MCUXpresso_firmware_update/10.png" />
+</p>
+
+This window will appear. Ensure that the build was successful. You may close this mini window and click on the "Write image" tab
+
+<p align="center">
+  <img src="../images/MCUXpresso_firmware_update/11.png" />
+</p>
+
+From here, select "Write Image" and wait for the process to complete.
+
+<p align="center">
+  <img src="../images/MCUXpresso_firmware_update/12.png" />
+</p>
+
+Ensure that the process is successful. You may close this mini window. The SLMX4 is now flashed with your selected firmware.
+
+<p align="center">
+  <img src="../images/MCUXpresso_firmware_update/13.png" />
+</p>
