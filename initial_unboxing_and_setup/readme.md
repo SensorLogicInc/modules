@@ -18,7 +18,7 @@ If your module does show up correctly, the RGB LED will be a greenish-yellow col
 ![green-yellow](../images/initial_unboxing_and_setup/3.png)
 
 ## Flashing Firmware
-The SLMX4 will come pre-loaded with the MATLAB firmware. To switch to the MATLAB or Health App firmware, refer to the [SLMX4 Firmware Update](insecure_fw_update.md) user guide.
+The SLMX4 will come pre-loaded with the MATLAB firmware. To switch to the MATLAB or Health App firmware, refer to the [SLMX4 Firmware Update](../firmware/insecure_fw_update.md) user guide.
 
 These are the latest files for both the Health App and MATLAB firmware:
 
@@ -27,7 +27,7 @@ These are the latest files for both the Health App and MATLAB firmware:
  
 Here is the user guide for using the Health App. 
 
-- [SLMX4 Health App User Guide](health_app.md)
+- [SLMX4 Health App User Guide](../firmware/health_app.md)
 
 Here is the latest version of the Health App. Refer to the SLMX4 Health App user guide above to get started.
 
