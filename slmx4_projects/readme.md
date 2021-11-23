@@ -32,5 +32,5 @@ to import.
   This demonstrates how to use the LUX sensor on the SLMX4.
 - **[vcom_xep_matlab_server](vcom_xep_matlab_server)**  
   This exposes the USB on the SLMX4 as a virtual COM part and instantiates a server that will commuincate with the 
-  [vcom_xep_radar_connector](matlab/vcom_xep_radar_connector.m) client, using MATLAB. The Xethru `xep` driver enables full communication, 
+  [vcom_xep_radar_connector](../matlab/vcom_xep_radar_connector.m) client, using MATLAB. The Xethru `xep` driver enables full communication, 
   parameter configuration, and data streaming to/from the X4 radar SoC, the primary sensing technology on the SLMX4.
