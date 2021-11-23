@@ -44,6 +44,7 @@ The color of the RGB LED can help determine which firmware is present on the mod
 - RGB: Violet,       Green: Off,         Red: On (1 Hz blink) -> Health App firmware is loaded and in operation, presence is detected
 
 Picture Examples Respectively
+
 1. 
 	- ![green-yellow](../images/initial_unboxing_and_setup/3.png)
 2. 
