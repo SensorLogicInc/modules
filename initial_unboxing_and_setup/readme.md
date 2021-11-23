@@ -45,13 +45,8 @@ The color of the RGB LED can help determine which firmware is present on the mod
 
 Picture Examples Respectively
 
-1. 
-	- ![green-yellow](../images/initial_unboxing_and_setup/3.png)
-2. 
-	- ![teal](../images/initial_unboxing_and_setup/4.png)
-3. 
-	- ![off](../images/initial_unboxing_and_setup/5.png)
-4. 
-	- ![green](../images/initial_unboxing_and_setup/6.png)
-5. 
-	- ![violet](../images/initial_unboxing_and_setup/7.png)
+![green-yellow](../images/initial_unboxing_and_setup/3.png)
+![teal](../images/initial_unboxing_and_setup/4.png)
+![off](../images/initial_unboxing_and_setup/5.png)
+![green](../images/initial_unboxing_and_setup/6.png)
+![violet](../images/initial_unboxing_and_setup/7.png)
