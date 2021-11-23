@@ -116,7 +116,7 @@ the boot pins are set in the `Firmware Update Mode` the RGB, Green, and Red LEDs
 
 ![](../images/MCUXpresso_firmware_update/8.png)
 
-### Step Five: Flash the SLMX4 with the Firmware
+### Step 5: Flash the SLMX4 with the Firmware
 
 Next, select an image to flash onto the SLMX4. Select "Browse..." next to the "Source executable image:" and select the .s19 file you wish to flash.
 If the "Configuration Helper" pop-up appears, click on "Deselect All" and click "OK".
