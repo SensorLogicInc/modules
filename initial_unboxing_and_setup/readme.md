@@ -47,11 +47,11 @@ Here is the latest version of the Health App. Refer to the SLMX4 Health App user
 The health module comes equipped with an RGB LED as well as one green and one red LED.
 The color of the RGB LED can help determine which firmware is present on the module.
 
-- RGB: Green-yellow, Green: Off,         Red: Off             -> Denotes MATLAB firmware is loaded onto health module
-- RGB: Teal,         Green: On (static), Red: On (static)     -> Denotes health module can be flashed with new/different firmware
-- RGB: Off,          Green: Off,         Red: On (1 Hz blink) -> Health App firmware is loaded and not in operation
-- RGB: Green,        Green: Off,         Red: On (1 Hz blink) -> Health App firmware is loaded and in operation, presence is not detected
-- RGB: Violet,       Green: Off,         Red: On (1 Hz blink) -> Health App firmware is loaded and in operation, presence is detected
+- RGB: Green-yellow | Green: Off | Red: Off -> Denotes MATLAB firmware is loaded onto health module
+- RGB: Teal | Green: On (static) | Red: On (static) -> Denotes health module can be flashed with new/different firmware
+- RGB: Off | Green: Off | Red: On (1 Hz blink) -> Health App firmware is loaded and not in operation
+- RGB: Green | Green: Off | Red: On (1 Hz blink) -> Health App firmware is loaded and in operation, presence is not detected
+- RGB: Violet | Green: Off | Red: On (1 Hz blink) -> Health App firmware is loaded and in operation, presence is detected
 
 Picture Examples Respectively
 
