@@ -7,6 +7,16 @@ Ensure the switch at the back is in this configuration:
 ![operate-config](../images/initial_unboxing_and_setup/1.png)
 
 WARNING: DO NOT CHANGE THIS CONFIGURATION WHILE THE MODULE IS POWERED ON
+
+Next, ensure that the EPAM is seated properly. Examples of improper placement could look like this...
+
+![operate-config](../images/initial_unboxing_and_setup/8.png)
+![operate-config](../images/initial_unboxing_and_setup/9.png)
+
+Instead, a proper EPAM configuration will be this orientation with the pins fully seated and aligned with the connector as shown here:
+  
+![operate-config](../images/initial_unboxing_and_setup/10.png)
+![operate-config](../images/initial_unboxing_and_setup/11.png)  
   
 Plug in the SLMX4 using a micro-usb cable. With the SLMX4 plugged into your PC, click on the start menu and search for "device manager" and open it. Browse to "Ports (COM $ LPT)" and expand the menu. Ensure that the SLMX4 appears as "Virtual Com Port (COMX)" where "X" denotes the specific COM port for your machine.
 
