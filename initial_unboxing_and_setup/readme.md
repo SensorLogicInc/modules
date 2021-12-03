@@ -1,62 +1,56 @@
-# Initial Unboxing and Setup Guide
+# Unboxing Quick Start Guide
 
-## Unpacking and Powering On
-When you first receive your SLMX4, carefully remove it from the EDS packaging.
-Ensure the switch at the back is in this configuration:
+## Unpack and Verify Configuration
+
+When you first receive your SLMX4 carefully remove it from the EDS packaging. Ensure the switch on the back, S2, is in the proper startup configuration:
 
 ![operate-config](../images/initial_unboxing_and_setup/1.png)
 
-WARNING: DO NOT CHANGE THIS CONFIGURATION WHILE THE MODULE IS POWERED ON
+**WARNING:** DO NOT CHANGE THIS CONFIGURATION WHILE THE MODULE IS POWERED 
 
-Next, ensure that the EPAM is seated properly. Examples of improper placement could look like this...
+Next, ensure that the EPAM is seated properly. Examples of improper placement could look like this:
 
-![operate-config](../images/initial_unboxing_and_setup/8.png)
-![operate-config](../images/initial_unboxing_and_setup/9.png)
+Bad Seating Example #1      |  Bad Seating Example #2                       
+:--------------------------:|:------------------------:
+![operate-config](../images/initial_unboxing_and_setup/8.png) | ![operate-config](../images/initial_unboxing_and_setup/9.png)
 
-Instead, a proper EPAM configuration will be this orientation with the pins fully seated and aligned with the connector as shown here:
+Instead, a proper EPAM connection will have this orientation with the pins fully seated and aligned with the connector, as shown here:
   
-![operate-config](../images/initial_unboxing_and_setup/10.png)
-![operate-config](../images/initial_unboxing_and_setup/11.png)  
+Proper Orientation Top    |  Proper Seating Side                      
+:------------------------:|:--------------------:
+![operate-config](../images/initial_unboxing_and_setup/10.png) | ![operate-config](../images/initial_unboxing_and_setup/11.png)  
   
-Plug in the SLMX4 using a micro-usb cable. With the SLMX4 plugged into your PC, click on the start menu and search for "device manager" and open it. Browse to "Ports (COM $ LPT)" and expand the menu. Ensure that the SLMX4 appears as "Virtual Com Port (COMX)" where "X" denotes the specific COM port for your machine.
+## Power and Connect to a Windows Host Machine
+
+Power up the SLMX4 via P1 (vertical micro-usb connector on the bottom side), with the provided cable, to a Windows host PC. Click on the start menu and search for _"Device Manager"_ and begin. Browse to _"Ports (COM & LPT)"_ and expand the menu. Ensure that the SLMX4 appears as _"Virtual Com Port (COM<##>)"_ where _"##"_ denotes the specific COM port number assigned to the SLMX4 from the host machine. Note the COM port number for later use.
 
 ![usb auto loader](../images/initial_unboxing_and_setup/2.png)
 
-If your module does not show up in the device manager in this manner, click [HERE](../usb_driver) and follow the instructions to manually install the correct driver.
-If your module does show up correctly, the RGB LED will be a greenish-yellow color as shown:
+If your module does not load in the device manager, click [HERE](../usb_driver) and follow the instructions to manually install the Windows driver. If your module does show up correctly, the RGB LED will be a green-yellow color, as shown:
 
 ![green-yellow](../images/initial_unboxing_and_setup/3.png)
 
-## Flashing Firmware
-The SLMX4 will come pre-loaded with the MATLAB firmware. To switch to the MATLAB or Health App firmware, refer to the [SLMX4 Firmware Update](../firmware/insecure_fw_update.md) user guide.
+## Change or Update Firmware
 
-These are the latest files for both the Health App and MATLAB firmware:
+The SLMX4 will come pre-loaded with the MATLAB server firmware useful for radar development. If this is the desired firmware, start MATLAB, change the COM port to the correct number in the associated scripts, and start collecting radar signals! To switch to another firmware, e.g. the [Health Firmware](https://modules-release.s3-us-west-2.amazonaws.com/firmware/slmx4_base_usb_vcom_pb_dsp-epam0P1.s19), refer to the [SLMX4 Firmware Update Guide](../firmware/insecure_fw_update.md)..
+
+These are the latest firmware binaries for both the Health and MATLAB development firmware:
 
 - [SLMX4-Base Health Firmware](https://modules-release.s3-us-west-2.amazonaws.com/firmware/slmx4_base_usb_vcom_pb_dsp-epam0P1.s19)
 - [SLMX4-Base MATLAB Firmware](https://modules-release.s3-us-west-2.amazonaws.com/firmware/slmx4_base_usb_vcom_xep_matlab_server.s19)
- 
-Here is the user guide for using the Health App. 
 
-- [SLMX4 Health App User Guide](../firmware/health_app.md)
+Here is the latest version of the Forms Health App: [SLMX4 Health App](https://modules-release.s3-us-west-2.amazonaws.com/health_windows_app/slmx4_health_ui_usb.zip)
 
-Here is the latest version of the Health App. Refer to the SLMX4 Health App user guide above to get started.
+Here is the user guide for using the Health App   : [SLMX4 Health App User Guide](../firmware/health_app.md)
 
-- [SLMX4 Health App](https://modules-release.s3-us-west-2.amazonaws.com/health_windows_app/slmx4_health_ui_usb.zip)
+## LED Definitions
 
-## The color of the LEDs
-The health module comes equipped with an RGB LED as well as one green and one red LED.
-The color of the RGB LED can help determine which firmware is present on the module.
+The SLMX4 module comes equipped with an RGB LED, as well as a single Green and single Red LED. The color of the LEDs can help determine which firmware resides on the module, as well as the mode.
 
-- RGB: Green-yellow | Green: Off | Red: Off -> Denotes MATLAB firmware is loaded onto health module
-- RGB: Teal | Green: On (static) | Red: On (static) -> Denotes health module can be flashed with new/different firmware
-- RGB: Off | Green: Off | Red: On (1 Hz blink) -> Health App firmware is loaded and not in operation
-- RGB: Green | Green: Off | Red: On (1 Hz blink) -> Health App firmware is loaded and in operation, presence is not detected
-- RGB: Violet | Green: Off | Red: On (1 Hz blink) -> Health App firmware is loaded and in operation, presence is detected
-
-Picture Examples Respectively
-
-![green-yellow](../images/initial_unboxing_and_setup/3.png)
-![teal](../images/initial_unboxing_and_setup/4.png)
-![off](../images/initial_unboxing_and_setup/5.png)
-![green](../images/initial_unboxing_and_setup/6.png)
-![violet](../images/initial_unboxing_and_setup/7.png)
+RGB Color    | Green Status       | RED Status           | Function
+-------------|--------------------|----------------------|-----------------
+Green-yellow | Green: Off         | Red: Off             | MATLAB firmware is loaded 
+Teal         | Green: On (static) | Red: On (static)     | Ready to program new/different firmware
+Off          | Green: Off         | Red: On (1 Hz blink) | Health firmware is loaded and not in operation
+Green        | Green: Off         | Red: On (1 Hz blink) | Health firmware is loaded and in operation, presence is not detected
+Violet       | Green: Off         | Red: On (1 Hz blink) | Health firmware is loaded and in operation, presence is detected
