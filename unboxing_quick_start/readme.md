@@ -2,7 +2,7 @@
 
 [Back](../)
 
-## Unpack and Verify Configuration
+## Unbox and Verify Configuration
 
 When you first receive your SLMX4 carefully remove it from the EDS packaging. Ensure the switch on the back, S2, is in the proper startup configuration:
 
