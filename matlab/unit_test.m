@@ -14,7 +14,7 @@ clear;
 clc;
 
 
-r = vcom_xep_radar_connector('COM106'); % adjust for *your* COM port!
+r = vcom_xep_radar_connector('COM4'); % adjust for *your* COM port!
 r.Open('X4');
 
 fprintf('XEP set/get unit test\n');

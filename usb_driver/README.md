@@ -1,4 +1,7 @@
 # USB Driver Install
+
+[Back](../)
+
 This guide contains steps needed to install the USB driver when Windows doesn't
 automatically install it.
 

@@ -9,7 +9,7 @@
 clear;
 clc;
 
-r = vcom_xep_radar_connector('COM106'); % adjust for *your* COM port!
+r = vcom_xep_radar_connector('COM4'); % adjust for *your* COM port!
 r.Open('X4');
 
 % As a side-effect many settings on write will cause the numSamplers
