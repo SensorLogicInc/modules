@@ -35,7 +35,7 @@ The format is:
 [len (uint32)][data]
 ```
 
-## [SLMX4 Health proto](slmx4_health.md)
+## [SLMX4 Health Proto](slmx4_health.md)
 This [link](slmx4_health.md) has more info on how a subset of commands are
 encoded.
 
@@ -44,6 +44,10 @@ code. In C, we also use the [`.options`](slmx4_usb_vcom.options) file which is n
 to set the array sizes for various fixed length arrays; this may not be needed in
 other languages, but simplifies things in C.
 
+> Health-specific Protobuf files
+
+- [`.proto`](slmx4_usb_vcom.proto)
+- [`.options`](slmx4_usb_vcom.options)
 
 ### C# Client Example of Protobuf Implementation
 
