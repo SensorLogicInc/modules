@@ -35,7 +35,7 @@ The format is:
 [len (uint32)][data]
 ```
 
-## SLMX4 Health proto
+## [SLMX4 Health proto](slmx4_health.md)
 This [link](slmx4_health.md) has more info on how a subset of commands are
 encoded.
 
