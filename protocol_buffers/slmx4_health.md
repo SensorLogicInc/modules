@@ -9,6 +9,11 @@ In the binary data representations below, the first four bytes indicate the leng
 The format is:  
 `[len][data]`
 
+> Health-specific Protobuf files
+
+- [`.proto`](slmx4_usb_vcom.proto)
+- [`.options`](slmx4_usb_vcom.options)
+
 ## Start
 The Start command uses opcode 3 with an empty payload type. This results in the bytes:
 ```
