@@ -15,7 +15,8 @@ from slmx4_health_wrapper import slmx4_health
 from slmx4_health_debug import *
 
 # Create a instance of the slmx4 health wrapper
-slmx4 = slmx4_health('/dev/ttyACM0')
+slmx4 = slmx4_health('/dev/ttyACM0') # Linux
+# slmx4 = slmx4_health('COM3') # Windows
 
 # Open the USB VCOM connection
 slmx4.open()
@@ -43,7 +44,10 @@ try:
 		health = slmx4.read_msg()
 		resp_wave = slmx4.read_msg()
 
-		os.system('clear')
+		if os.name == 'nt':
+			os.system('cls')
+		else:
+			os.system('clear')
 
 		debug_health(health)
 		# debug_resp_wave(resp_wave)

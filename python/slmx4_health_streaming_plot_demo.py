@@ -27,8 +27,12 @@ def animate(i):
 	health = slmx4.read_msg()
 	resp_wave = slmx4.read_msg()
 
+	if os.name == 'nt':
+		os.system('cls')
+	else:
+		os.system('clear')
+	
 	# Display the health info on the terminal
-	os.system('clear')
 	debug_health(health)
 
 	# Get the frame counter value
@@ -51,7 +55,8 @@ def animate(i):
 fig, ax = plt.subplots()
 
 # Create a instance of the slmx4 health wrapper
-slmx4 = slmx4_health('/dev/ttyACM0')
+slmx4 = slmx4_health('/dev/ttyACM0') # Linux
+# slmx4 = slmx4_health('COM3') # Windows
 
 # Open the USB VCOM connection
 slmx4.open()
