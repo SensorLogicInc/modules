@@ -43,10 +43,10 @@ There are a number of example python demonstrations.
 - [slmx4_health_polling_demo.py](slmx4_health_polling_demo.py)  
   The demonstrates how to manually trigger (or poll) the radar on the SLM-X4. _This is not recommended
   to due to measurement time jitter which may affect respiration calculations._
-- [slmx4_health_streaming_demo.py]slmx4_health_streaming_demo.py)  
+- [slmx4_health_streaming_demo.py](slmx4_health_streaming_demo.py)  
   This demonstrates how data streaming works. The SLM-X4 once data streaming starts will generate
   and process radar data at a fixed rate with little jitter.
-- [slmx4_health_streaming_plot_demo.py]slmx4_health_streaming_plot_demo.py)  
+- [slmx4_health_streaming_plot_demo.py](slmx4_health_streaming_plot_demo.py)  
   This is similar to the streaming demo except the respiration waveform is plotted in addition to
   the data shown on the terminal
 
