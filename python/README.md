@@ -1,9 +1,9 @@
-# SLM-X4 Health Python Wrapper
+# SLMX4 Health Python Wrapper
 
 > This folder contains python code for interaction with the SLM-X4 module running the
   [health firmware](https://modules-release.s3-us-west-2.amazonaws.com/firmware/slmx4_base_usb_vcom_xep_matlab_server.s19).
 
-The [`slmx4_health_wrapper.py](slmx4_health_wrapper.py) file contains an interface which allows 
+The [slmx4_health_wrapper.py](slmx4_health_wrapper.py) file contains an interface which allows 
 python to interact with the SLM-X4 running the health firmware.
 
 ## Health Firmware Protocol
