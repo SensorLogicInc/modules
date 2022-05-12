@@ -53,10 +53,10 @@ The _[MATLAB Firmware and Connector](matlab/readme.md)_ allows the user to use a
 │   └── slmx4_usb_vcom.proto                # Health Firmware Protocol Buffer .proto file
 ├── python
 │   ├── slmx4_health_wrapper.py             # Python wrapper for Health Firmware
-│   ├── slmx4_usb_vcom_pb2.py               # Python protobuf spec
-│   ├── slmx4_health_polling_demo.py        # Python Script to demo polling
-│   ├── slmx4_health_streaming_demo.py      # Python Script to demo streaming
-│   └── slmx4_health_streaming_plot_demo.py # Python Script to demo streaming and plotting
+│   ├── slmx4_usb_vcom_pb2.py               # Python protobuf spec for Health
+│   ├── slmx4_health_polling_demo.py        # Python Script to demo Health polling
+│   ├── slmx4_health_streaming_demo.py      # Python Script to demo Health streaming
+│   └── slmx4_health_streaming_plot_demo.py # Python Script to demo Health streaming and breathing pattern plotting
 ├── slmx4_projects
 │   └── vcom_xep_matlab_server              # MATLAB XEP server firmware for the SLMX4
 └── usb_driver
