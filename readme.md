@@ -1,8 +1,8 @@
-[Quick Start Guide](unboxing_quick_start) &nbsp;&nbsp;&nbsp;[SLMX4 Data Sheet](docs/SLMX4_Data_Sheet_2022.pdf) &nbsp;&nbsp;&nbsp;[X4 Radar Primer](docs/XTAN-13_XeThruX4RadarUserGuide_rev_a.pdf)
+#### [Quick Start Guide](unboxing_quick_start) &nbsp;&nbsp;&nbsp;[SLMX4 Data Sheet](docs/SLMX4_Data_Sheet_2022.pdf) &nbsp;&nbsp;&nbsp;[X4 Radar Primer](docs/XTAN-13_XeThruX4RadarUserGuide_rev_a.pdf)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Firmware](firmware) &nbsp;&nbsp;&nbsp;[XEP MATLAB Connector](matlab) &nbsp;&nbsp;&nbsp;[Health Python Wrapper](python) &nbsp;&nbsp;&nbsp;[USB Driver](usb_driver)
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Firmware](firmware) &nbsp;&nbsp;&nbsp;[XEP MATLAB Connector](matlab) &nbsp;&nbsp;&nbsp;[Health Python Wrapper](python) &nbsp;&nbsp;&nbsp;[USB Driver](usb_driver)
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[SLMX4 Projects](slmx4_projects) &nbsp;&nbsp;&nbsp;[Code](https://github.com/SensorLogicInc/modules/tree/main/slmx4_projects) &nbsp;&nbsp;&nbsp;[Proto Buff Info](protocol_buffers)  
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[SLMX4 Projects](slmx4_projects) &nbsp;&nbsp;&nbsp;[Code](https://github.com/SensorLogicInc/modules/tree/main/slmx4_projects) &nbsp;&nbsp;&nbsp;[Proto Buff Info](protocol_buffers)  
 
 # Radar Modules
 
@@ -31,7 +31,7 @@ The hardware platform is the modular 2-piece SLMX4, which is comprised of a base
  - [X4 Radar Primer](docs/XTAN-13_XeThruX4RadarUserGuide_rev_a.pdf)
 
 ## SLMX4 Health Firmware and App
-The [Health Firmware](https://modules-release.s3-us-west-2.amazonaws.com/firmware/slmx4_base_usb_vcom_pb_dsp-epam0P1.s19) runs our proprietary algorithms to identify the presence of, and distance to, a human target. If conditions are right, the human respiration is calculated within +/-1 RPM, out to 5 meters. The data is transmitted via USB or Wi-Fi and is displayed on a basic yet straightforward Windows Forms App, the [SLMX4 Health UI](firmware/health_app.md), ultimately displaying the subject's breathing pattern in real-time.
+The [Health Firmware](https://modules-release.s3-us-west-2.amazonaws.com/firmware/slmx4_base_usb_vcom_pb_dsp-epam0P1.s19) runs our proprietary algorithms to identify the presence of, and distance to, a human target. If conditions are right, the human respiration is calculated within +/-1 RPM, out to 5 meters. The data is transmitted via USB or Wi-Fi and is displayed on a basic yet straightforward Windows GUI App, the [SLMX4 Health UI](firmware/health_app.md), ultimately displaying the subject's breathing pattern in real-time. Furthermore, there is a [Python Wrapper and Demos](python) that interface with the _Health Firmware_ to enable rapid, embedded integration.
 
 ## SLMX4 MATLAB Firmware and Connector
 The _[MATLAB Firmware and Connector](matlab/readme.md)_ allows the user to use an efficient, high-level development environment, like MATLAB, to query the module for raw radar data for custom algorithm and application development. The data comes in two flavors, real RF data, effectively sampled at 23.328 GSps, or In-Phase/Quadrature (IQ) data that has been downconverted and decimated. Complete control of the radar is available by being able to query and set every radar register parameter. For example, changing certain parameters will affect the frame rate versus processing gain, depending on the application and required SNR. 
@@ -39,22 +39,28 @@ The _[MATLAB Firmware and Connector](matlab/readme.md)_ allows the user to use a
 ## Folder Structure
 ```
 ├── firmware
-│   ├── health_app.md                   # Documentation about the SLMX4 Health App
-│   └── insecure_fw_update.md           # Documentation about updating the SLMX4 Firmware
-├── images                              # Contains the images used in the markdown files
+│   ├── health_app.md                       # Documentation about the SLMX4 Health App
+│   └── insecure_fw_update.md               # Documentation about updating the SLMX4 Firmware
+├── images                                  # Contains the images used in the markdown files
 ├── matlab
-│   ├── timer_test.m                    # MATLAB Script to demo fixed radar framerate
-│   ├── unit_test.m                     # MATLAB Script to verify the communication with the radar
-│   ├── vcom_test.m                     # MATLAB Script to verify the ability to receive radar data
-│   └── vcom_xep_radar_connector.m      # MATLAB Class to connect the Module to MATLAB
+│   ├── timer_test.m                        # MATLAB Script to demo fixed radar framerate
+│   ├── unit_test.m                         # MATLAB Script to verify the communication with the radar
+│   ├── vcom_test.m                         # MATLAB Script to verify the ability to receive radar data
+│   └── vcom_xep_radar_connector.m          # MATLAB Class to connect the Module to MATLAB
 ├── protocol_buffers
-│   ├── slmx4_health.md                 # Health Firmware Protocol Buffer Details
-│   ├── slmx4_usb_vcom.options          # Health Firmware Protocol Buffer .options file
-│   └── slmx4_usb_vcom.proto            # Health Firmware Protocol Buffer .proto file
+│   ├── slmx4_health.md                     # Health Firmware Protocol Buffer Details
+│   ├── slmx4_usb_vcom.options              # Health Firmware Protocol Buffer .options file
+│   └── slmx4_usb_vcom.proto                # Health Firmware Protocol Buffer .proto file
+├── python
+│   ├── slmx4_health_wrapper.py             # Python wrapper for Health Firmware
+│   ├── slmx4_usb_vcom_pb2.py               # Python protobuf spec
+│   ├── slmx4_health_polling_demo.py        # Python Script to demo polling
+│   ├── slmx4_health_streaming_demo.py      # Python Script to demo streaming
+│   └── slmx4_health_streaming_plot_demo.py # Python Script to demo streaming and plotting
 ├── slmx4_projects
-│   └── vcom_xep_matlab_server          # MATLAB XEP server firmware for the SLMX4
+│   └── vcom_xep_matlab_server              # MATLAB XEP server firmware for the SLMX4
 └── usb_driver
-    └── inf/                            # Contains the USB VCOM device driver for Windows 
+    └── inf/                                # Contains the USB VCOM device driver for Windows 
 ```
 
 **[Home](https://www.sensorlogic.ai/)**
