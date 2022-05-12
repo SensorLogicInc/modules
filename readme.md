@@ -59,6 +59,8 @@ The _[MATLAB Firmware and Connector](matlab/readme.md)_ allows the user to use a
 │   └── slmx4_health_streaming_plot_demo.py # Python Script to demo Health streaming and breathing pattern plotting
 ├── slmx4_projects
 │   └── vcom_xep_matlab_server              # MATLAB XEP server firmware for the SLMX4
+└── unboxing_quick_start
+    └── readme.md                           # SLMX4 Unboxing quick start guide
 └── usb_driver
     └── inf/                                # Contains the USB VCOM device driver for Windows 
 ```
