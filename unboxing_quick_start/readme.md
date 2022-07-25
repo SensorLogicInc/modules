@@ -4,7 +4,7 @@
 
 ## Unbox and Verify Configuration
 
-When you first receive your SLMX4 carefully remove it from the EDS packaging. Ensure the switch on the back, S2, is in the proper startup configuration:
+When you first receive your SLMX4 carefully remove it from the ESD packaging. Ensure the switch on the back, S2, is in the proper startup configuration:
 
 ![operate-config](../images/initial_unboxing_and_setup/1.png)
 
