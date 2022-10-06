@@ -28,8 +28,8 @@ The hardware platform is the modular 2-piece SLMX4, which is comprised of a base
  - [SLMX4-Base + EPAM 2P1 Mechanical Drawing](docs/mech/SLMX4-Base%202P1%20PCB%20Mechanical.PDF)
  - [SLMX4-Base + EPAM 2P1 Step File](https://www.dropbox.com/s/1vpb7nii1gy73qa/SLMX4-Base%202P1.step?dl=1)
  - [SLMX4-Base + EPAM 2P1 Block Diagram](images/slmx4-base_epam0p2_system_architecture.png)
- - [EPAM Azimuth FOV](docs/epam_fov/azi/)
- - [EPAM Elev FOV](docs/epam_fov/elev/)
+ - [EPAM Azimuth FOV](docs/epam_fov/azi/epam_azi_7.3GHz.png)
+ - [EPAM Elev FOV](docs/epam_fov/elev/epam_elev_7.3GHz.png)
  - [X4 Radar Primer](docs/XTAN-13_XeThruX4RadarUserGuide_rev_a.pdf)
 
 ## SLMX4 Health Firmware and App
