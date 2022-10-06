@@ -6,7 +6,7 @@ The following guide provides information about downloading and running the SLMX4
 
 ## SLMX4 Health App - Download and Connect
 ### Download the SLMX4 Health App
-1. Download the [SLMX4 Health App](https://modules-release.s3-us-west-2.amazonaws.com/health_windows_app/slmx4_health_ui_usb.zip)
+1. Download the [SLMX4 Health App](https://www.dropbox.com/s/8uffmmg2k6pqq62/slmx4_health_ui_usb.zip?dl=1)
 2. Extract the files from the `slmx4_health_ui_usb` Zip Folder.
 3. Move the `slmx4_health_ui_usb` Folder, if desired. This folder location will be know as [SLI-Modules].
 #### SLMX4  Buddy Files
